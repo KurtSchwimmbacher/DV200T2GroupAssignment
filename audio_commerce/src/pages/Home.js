@@ -4,10 +4,14 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import { ArrowRight } from 'react-bootstrap-icons';
+
 import "../styles/HomePage.css";
 
 import NavigationBar from "../components/NavigationBar";
-import homeVid from "../assets/videos/Home_pg_vid.mp4";
+import MarqComp from "../components/MarqComp";
+import HeaderComp from "../components/HeaderComp";
+import ProductCard from "../components/ProductCard";
 
 function Home() {
 
@@ -16,11 +20,30 @@ function Home() {
     return(
         <>
         <NavigationBar />
-        <Container className="homeMainCont">
-            <Row className="row hero">
-                <Col className="col-12 nav">
-                <video className="video-home-pg" src={homeVid} autoPlay loop muted>
-                 </video>
+        
+        <HeaderComp className="video-home-pg" />
+
+        <MarqComp className="marquee-comp" />
+
+        <Container className="main-content">
+            <Row>
+                <Col>
+                    <h1>Top Products</h1>
+                    <div className="see-more-products">
+                        <p className="more-products-text">See More</p>
+                        <ArrowRight />
+                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col className="col-4">
+                    <ProductCard />
+                </Col>
+                <Col className="col-4">
+                    <ProductCard />
+                </Col>
+                <Col className="col-4">
+                    <ProductCard />
                 </Col>
             </Row>
         </Container>

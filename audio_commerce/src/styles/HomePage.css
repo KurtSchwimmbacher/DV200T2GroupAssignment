@@ -3,10 +3,38 @@
 
 .video-home-pg{
     object-fit: cover;
-    width: 100vw;
-    height: 90vh;
-    position: fixed;
+    width: 100%;
+    height: 80vh;
     top: 0;
     left: 0;
     z-index: 1000;
+    margin-bottom: 0;
+}
+
+.marquee-comp{
+    font-family: "Josefin Sans", sans-serif;
+    margin-top: -5px;
+    width: 100%;
+    background-color: #FF6E1F;
+    color: white;
+}
+
+.main-content{
+    font-family: "Josefin Sans", sans-serif;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.see-more-products{
+    display: -webkit-inline-box;
+    float: right;
+}
+
+.more-products-text{
+    margin-right: 5px;
+}
+
+.more-products-text:hover{
+   cursor: pointer;
+   font-weight: bold;
 }

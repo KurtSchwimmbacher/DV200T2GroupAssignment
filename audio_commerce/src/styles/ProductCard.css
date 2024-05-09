@@ -1,0 +1,43 @@
+.product-card{
+    font-family: "Josefin Sans", sans-serif;
+    padding: 2rem;
+    border: none;
+    background-color: #FAFAFA;
+}
+
+.card-category{
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #FF6E1F;
+}
+
+.card-subtitle{
+    font-size: 18px;
+    color: #776E6E;
+    font-weight: 500;
+}
+.card-subtxt{
+    color: #9C9595;
+}
+
+.card-title{
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 600;
+    color: #222222;
+}
+
+.card-img{
+    padding: 2rem;
+}
+
+.view-product-btn{
+    color: #FF6E1F;
+    float: right;
+    width: 7% !important;
+    height: 7%;
+}
+
+.view-product-btn:hover{
+    cursor: pointer;
+}
