@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 function NavigationBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary justify-content-center">
+    <Navbar expand="lg" className="nav-bar-con bg-body-tertiary justify-content-center">
     <Container>
       <Navbar.Brand>
         <Link to="/" className='navbar-link-brand'>

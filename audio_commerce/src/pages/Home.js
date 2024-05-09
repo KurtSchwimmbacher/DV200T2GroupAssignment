@@ -5,10 +5,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button'
 
-import NavigationBar from "../components/NavigationBar";
+import "../styles/HomePage.css";
 
+import NavigationBar from "../components/NavigationBar";
+import homeVid from "../assets/videos/Home_pg_vid.mp4";
 
 function Home() {
+
 
    
     return(
@@ -17,8 +20,8 @@ function Home() {
         <Container className="homeMainCont">
             <Row className="row hero">
                 <Col className="col-12 nav">
-                    
-                    <h1>Home</h1>
+                <video className="video-home-pg" src={homeVid} autoPlay loop muted>
+                 </video>
                 </Col>
             </Row>
         </Container>

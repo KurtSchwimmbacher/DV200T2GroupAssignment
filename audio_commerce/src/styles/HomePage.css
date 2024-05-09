@@ -1,0 +1,12 @@
+/* insert fonts and colours */
+
+
+.video-home-pg{
+    object-fit: cover;
+    width: 100vw;
+    height: 90vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
