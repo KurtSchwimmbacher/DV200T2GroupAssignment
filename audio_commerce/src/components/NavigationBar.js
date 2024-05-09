@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button'
 
 import "../styles/NavigationBar.css";
 
@@ -18,7 +19,8 @@ function NavigationBar() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="m-auto">
+        <Nav className="container-fluid ">
+          <div className='m-auto link-con' >
           <Nav.Link >
             <Link to="/" className='navbar-link'>
                 Home
@@ -34,6 +36,13 @@ function NavigationBar() {
                 Community
             </Link>
           </Nav.Link>
+          </div>
+         
+          <Navbar.Text className="ml-auto">          
+            <Link to="/cart" className='navbar-link-cart'>
+              <Button className='cart-btn' variant="primary">Cart</Button>
+            </Link>
+          </Navbar.Text>
         </Nav>
       </Navbar.Collapse>
     </Container>

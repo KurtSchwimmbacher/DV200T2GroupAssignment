@@ -3,10 +3,33 @@
     z-index: 1001;
 }
 
+.link-con{
+    display: flex;
+    flex-direction: row;
 
-.navbar-link,.navbar-link-brand{
-    text-decoration: none ;
+}
+
+.navbar-link,.navbar-link-brand ,.navbar-link-cart{
+    text-decoration: none;
     color: #222222;
+}
+
+.navbar-link-cart{
+    float: right;
+}
+
+.cart-btn{
+    background-color: #ffffff;
+    color: #222222;
+    border-radius: 15px;
+    border: 2px solid #222222;
+}
+
+.cart-btn:hover ,.cart-btn::after{
+    background-color: #ffffff;
+    color: #222222;
+    font-weight: bold;
+    border: 2px solid #222222;
 }
 
 .navbar-link:hover{

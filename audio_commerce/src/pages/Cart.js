@@ -4,13 +4,11 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import "../styles/HomePage.css";
 
 import NavigationBar from "../components/NavigationBar";
-import homeVid from "../assets/videos/Home_pg_vid.mp4";
 
-function Home() {
 
+function Cart() {
 
    
     return(
@@ -19,8 +17,8 @@ function Home() {
         <Container className="homeMainCont">
             <Row className="row hero">
                 <Col className="col-12 nav">
-                <video className="video-home-pg" src={homeVid} autoPlay loop muted>
-                 </video>
+                    
+                    <h1>Cart</h1>
                 </Col>
             </Row>
         </Container>
@@ -29,4 +27,4 @@ function Home() {
     );
 }
 
-export default Home; 
+export default Cart; 
