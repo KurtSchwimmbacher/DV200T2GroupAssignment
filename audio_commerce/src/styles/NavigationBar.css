@@ -19,10 +19,12 @@
 }
 
 .cart-btn{
+    width: 100%;
     background-color: #ffffff;
     color: #222222;
     border-radius: 15px;
     border: 2px solid #222222;
+    padding-top: 5px;
 }
 
 .cart-btn:hover ,.cart-btn::after{
