@@ -1,0 +1,23 @@
+.navbar-link,.navbar-link-brand{
+    text-decoration: none ;
+    color: #222222;
+}
+
+.navbar-link:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bg-body-tertiary{
+    width: 100%;
+    margin-bottom: 5vh;
+    background-color: rgba(250, 250, 250, 0.4);
+}
+
+.navbar-link{
+    margin: 1rem;
+}
+
+.navbar-link-brand{
+    width: 0px;
+}
