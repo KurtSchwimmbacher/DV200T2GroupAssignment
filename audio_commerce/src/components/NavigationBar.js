@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button'
 
 import "../styles/NavigationBar.css";
 
+import Logo from '../assets/logo/logo-2.svg';
+
 // import link
 import { Link } from "react-router-dom";
 
@@ -14,7 +16,7 @@ function NavigationBar() {
     <Container>
       <Navbar.Brand>
         <Link to="/" className='navbar-link-brand'>
-                Insert Logo
+                <img className='logo-img' src={Logo} alt='logo img'></img>
             </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

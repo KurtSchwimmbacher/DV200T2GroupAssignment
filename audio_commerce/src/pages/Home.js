@@ -12,6 +12,7 @@ import NavigationBar from "../components/NavigationBar";
 import MarqComp from "../components/MarqComp";
 import HeaderComp from "../components/HeaderComp";
 import ProductCard from "../components/ProductCard";
+import ProductHighlight from "../components/ProductHighlight";
 
 function Home() {
 
@@ -23,9 +24,11 @@ function Home() {
         
         <HeaderComp className="video-home-pg" />
 
+
         <MarqComp className="marquee-comp" />
 
         <Container className="main-content">
+            {/* product cards title */}
             <Row>
                 <Col>
                     <h1>Top Products</h1>
@@ -35,6 +38,7 @@ function Home() {
                     </div>
                 </Col>
             </Row>
+            {/* product cards */}
             <Row>
                 <Col className="col-4">
                     <ProductCard />
@@ -48,6 +52,8 @@ function Home() {
             </Row>
         </Container>
      
+        <ProductHighlight />
+
      </>
     );
 }

@@ -13,7 +13,8 @@
 
 .marquee-comp{
     font-family: "Josefin Sans", sans-serif;
-    margin-top: -5px;
+    margin-top: -7px;
+    padding-top: 10px;
     width: 100%;
     background-color: #FF6E1F;
     color: white;
