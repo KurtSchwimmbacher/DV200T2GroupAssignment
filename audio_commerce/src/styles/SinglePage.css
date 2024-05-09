@@ -1,0 +1,47 @@
+.content{
+    font-family: "Josefin Sans", sans-serif;
+    margin-top: 5vh;
+}
+
+.add-to-cart{
+    float: right;
+    margin-top: 2vh;
+    margin-right: 3rem;
+    display: -webkit-inline-box;
+}
+
+.price-tag{
+    margin-top: 2vh;
+    color: #776E6E;
+}
+
+.add-to-cart-arrow{
+    margin-left: 15px;
+    color: #FF6E1F;
+}
+
+.schematic-title{
+    margin-top: 15vh;
+}
+
+.download-pdf{
+    display: -webkit-inline-box;
+    float: right;
+    margin-top: 3px;
+}
+
+.pdf-arrow{
+    margin-top: -3px;
+    color: #FF6E1F;
+}
+
+.download-txt{
+    margin-right: 10px;
+}
+
+.schematic-con{
+    height: 80vh;
+    object-fit: cover;
+    overflow: hidden;
+    margin-bottom: 5vh;
+}

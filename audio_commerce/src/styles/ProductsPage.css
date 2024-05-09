@@ -3,9 +3,18 @@
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
+
+  
+  border-bottom: solid 1px black;
+  padding-bottom: 10px;
 }
 
 .pageHead{
     margin-top: 5%;
-    border-bottom: solid 1px black;
+}
+
+.by-applied{
+    display: inline-flex;
+    padding: 5px;
+    text-decoration: none;
 }
