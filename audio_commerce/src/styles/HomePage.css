@@ -39,3 +39,33 @@
    cursor: pointer;
    font-weight: bold;
 }
+
+.specific-headphone-con{
+    color: #222222;
+}
+
+.headphone-highlight-con{
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: #FF6E1F;
+}
+
+.headphone-img{
+    width: 70%;
+}
+
+.headphone-title{
+    margin-top: 5vh;
+    margin-left: -30%;
+    margin-bottom: 5vh;
+}
+
+.headphone-desc{
+    font-weight: 100;
+    font-size: 32px;
+}
+
+.headphone-btn{
+    margin-top: 5vh;
+}

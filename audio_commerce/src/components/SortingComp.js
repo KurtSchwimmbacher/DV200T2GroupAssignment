@@ -12,7 +12,7 @@ function SortingComp(){
         <Dropdown className="d-inline mx-2" autoClose="outside">
             {/*Dropdown Name*/}
             <Dropdown.Toggle id="dropdown-autoclose-outside">
-            Clickable Inside
+            Sort Products By: 
             </Dropdown.Toggle>
 
             {/*Dropdown Items*/}

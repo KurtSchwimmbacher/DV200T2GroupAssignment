@@ -17,9 +17,10 @@ function ProductHighlight() {
             <h1 className="product-title">
                 Product Highlight
             </h1>
-            <p className="product-desc">
-                lorem
-            </p>
+            <h2 className="product-desc">
+            Lorem ipsum 
+                    dolor sit amaet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Mauris finibus nec massa at porttitor.
+            </h2>
             <Button className="highlight-btn" variant="dark">View Product</Button>
         </div>
        </div>

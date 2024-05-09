@@ -32,15 +32,16 @@ function Products() {
                 </Col>
             </Row>
             <Row>
-                <Col className="filterPanel">
+                <Col className="col-md-auto filterPanel">
                     {/*Panel for filters*/}
+                    <FilterComp />
                 </Col>
 
-                <Col className="productsPanel">
+                <Col className="col productsPanel">
                     <Row className="prod-panel-whole">
-                        <Col className="col-12 prPan-filterSort">
+                        <Col className="col-12 prPan-filterSort align-items-start">
                             {/*cont for displaying applied filters and sort*/}
-                            <div className="by-applied-container">
+                            <div className="by-applied-container p-3 mb-2">
                                 <ul className="by-applied">
                                     <li className="sortedBy">
                                         <i className="bi bi-dot"></i> Sorted By:
@@ -50,12 +51,13 @@ function Products() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="sorting-drop">
+                            <div className="sorting-drop p-3">
                                 <SortingComp />
                             </div>
                         </Col>
                         <Col className="prPan-items">
                             {/*cont for displaying products*/}
+                            <h1>Hold Tight! Products are launching soon :{')'} </h1>
                         </Col>
                     </Row>
                 </Col>

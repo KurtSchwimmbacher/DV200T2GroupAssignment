@@ -9,10 +9,10 @@ function MarqComp() {
                 <h1>• Im a marquee •  </h1>
             </div>
             <div>
-                <h1>  Im a marquee • </h1>
+                <h1>   Im a marquee • </h1>
             </div>
             <div>
-                <h1>  Im a marquee • </h1>
+                <h1>   Im a marquee • </h1>
             </div>
         </Marquee>
     );

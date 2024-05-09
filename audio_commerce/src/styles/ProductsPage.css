@@ -1,11 +1,18 @@
-.pageHead h1{
+h1{
     font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 500;
   font-style: normal;
+}
+
+.pageHead h1{
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300 !important;
+    font-style: normal;
 
   
-  border-bottom: solid 1px black;
+  border-bottom: solid 0.5px black;
   padding-bottom: 10px;
 }
 
@@ -14,7 +21,25 @@
 }
 
 .by-applied{
-    display: inline-flex;
+    display: flex;
     padding: 5px;
     text-decoration: none;
+}
+
+.by-applied li{
+    padding-right: 2.5%;
+}
+
+.sorting-drop{
+    display: flex; 
+
+}
+
+.prPan-items{
+    height: 500px;
+}
+
+.filterPanel{
+    width: 250px; 
+    border-right: 0.5px solid black;
 }

@@ -16,6 +16,10 @@
     margin-left: 15rem;
 }
 
+.product-desc{
+    font-weight: 200;
+}
+
 .highlight-btn{
     font-family: "Josefin Sans", sans-serif;
     background-color: #222222;
