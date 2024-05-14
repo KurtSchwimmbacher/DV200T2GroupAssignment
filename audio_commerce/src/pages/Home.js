@@ -25,7 +25,7 @@ function Home() {
         <>
         <NavigationBar />
         
-        <HeaderComp className="video-home-pg" />
+        <HeaderComp className="video-home-pg" where={"Home"} />
 
 
         <MarqComp className="marquee-comp" />

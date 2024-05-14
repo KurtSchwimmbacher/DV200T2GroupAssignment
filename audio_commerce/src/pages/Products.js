@@ -21,7 +21,7 @@ function Products() {
         <>
         <NavigationBar />
 
-        <HeaderComp className="hero-prod-pg"/>
+        <HeaderComp className="hero-prod-pg" where={"Products"} />
 
         <MarqComp className="marquee-prod-pg"/>
 
