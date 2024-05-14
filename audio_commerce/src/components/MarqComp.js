@@ -4,15 +4,18 @@ function MarqComp() {
 
    
     return(
-        <Marquee className="marquee-comp" direction="left" loop={0} gradientWidth={50}>
+        <Marquee className="marquee-comp" direction="left" loop={0} gradientWidth={50} autoFill={true}>
             <div>
-                <h1>• Im a marquee •  </h1>
+                <h1>   Headphones   •   </h1>
             </div>
             <div>
-                <h1>   Im a marquee • </h1>
+                <h1>    Keyboards   •   </h1>
             </div>
             <div>
-                <h1>   Im a marquee • </h1>
+                <h1>    Attachments   •   </h1>
+            </div>
+            <div>
+                <h1>    Audio Equipment  •   </h1>
             </div>
         </Marquee>
     );
