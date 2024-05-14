@@ -45,6 +45,10 @@ function NavigationBar() {
               <Button className='cart-btn' variant="primary">Cart</Button>
             </Link>
           </Navbar.Text>
+          {/* replace with icon and modal for account */}
+          <Link to="/login" className='navbar-link'>
+              Account
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Container>

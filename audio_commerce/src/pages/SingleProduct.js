@@ -20,7 +20,7 @@ function SingleProduct() {
     return(
         <>
         <NavigationBar />
-        <HeaderComp />
+        <HeaderComp where={"SingleProduct"} />
         <MarqComp />
 
         <Container className="content">

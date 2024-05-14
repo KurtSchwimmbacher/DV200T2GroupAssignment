@@ -1,0 +1,34 @@
+.img-login{
+    height: 80vh;
+    padding: 5rem;
+}
+
+.form-con{
+    margin-top: 5vh;
+    font-family: "Josefin Sans", sans-serif !important;
+    padding: 5rem;
+}
+
+.form-title{
+    color: #222222;
+}
+
+.login-btn{
+    background-color: #222222;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.create-account-title{
+    margin-top: 2vh;
+    margin-bottom: 0vh;
+    text-align: center;
+}
+
+.create-account-title ,.create-link-btn{
+    width: 60%;
+    margin-left: 20%;
+    color: #222222;
+}
