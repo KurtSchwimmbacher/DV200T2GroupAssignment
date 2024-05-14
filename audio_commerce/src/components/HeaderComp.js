@@ -1,6 +1,6 @@
 import homeVid from "../assets/videos/Home_pg_vid.mp4";
-import productsImg from "../assets/images/headphones-3.png";
-import tempImg from "../assets/images/headphone-img.png";
+import productsImg from "../assets/images/dummy_products_img.png";
+import tempImg from "../assets/images/dummy_single_product_img.png";
 
 import { useEffect, useState } from "react";
 

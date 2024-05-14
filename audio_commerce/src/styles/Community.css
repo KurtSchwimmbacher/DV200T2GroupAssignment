@@ -1,0 +1,21 @@
+h1{
+    font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.pageHead h1{
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300 !important;
+    font-style: normal;
+
+  
+  border-bottom: solid 0.5px black;
+  padding-bottom: 10px;
+}
+
+.pageHead{
+    margin-top: 5%;
+}

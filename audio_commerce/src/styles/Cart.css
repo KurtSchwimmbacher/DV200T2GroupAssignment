@@ -1,0 +1,33 @@
+.back-nav-con{
+    display: -webkit-inline-box;
+    margin-top: 5vh;
+    color: #FF6E1F;
+}
+
+.back-btn{
+    font-family: "Josefin Sans", sans-serif;
+    padding-top: 3px;
+    color: #222222 !important;
+}
+
+.back-btn:hover{
+    font-weight: bold;
+}
+
+.line-border{
+    border-left: 1px solid #222222;
+    width: 5px;
+}
+
+.cart-items-title{
+    color: #222222;
+    height: 5vh;
+}
+
+.cart-details-title{
+    border-bottom: 1px solid #222222;
+    padding: 5px;
+    padding-bottom: 3vh;
+    height: 5vh;
+}
+

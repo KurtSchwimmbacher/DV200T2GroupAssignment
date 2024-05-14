@@ -47,7 +47,7 @@ function Products() {
                                         <i className="bi bi-dot"></i> Sorted By:
                                     </li>
                                     <li className="filtApplied">
-                                        <i className="bi bi-dot"></i> Filters Applied:
+                                        <i className="bi bi-dot"></i> Filters Applied: 
                                     </li>
                                 </ul>
                             </div>
@@ -55,9 +55,15 @@ function Products() {
                                 <SortingComp />
                             </div>
                         </Col>
-                        <Col className="prPan-items">
+                        <Col className="prPan-items ">
                             {/*cont for displaying products*/}
-                            <h1>Hold Tight! Products are launching soon :{')'} </h1>
+                            <Row className="justify-content-md-center">
+                                {/*Products go below*/}
+                                <h1>Hold Tight! Products are launching soon :{')'} </h1>
+                                <Col className="col"> 
+                                    <ProductCard />
+                                </Col>
+                            </Row>  
                         </Col>
                     </Row>
                 </Col>
