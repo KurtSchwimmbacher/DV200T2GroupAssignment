@@ -21,8 +21,8 @@
     font-family: "Josefin Sans", sans-serif !important;
     color: #222222;
     border: none;
-
-
+    filter: drop-shadow(-16px 16px 4px rgba(34,34,34,0.25));
+    border: none;
 }
 
 .modal-title{
