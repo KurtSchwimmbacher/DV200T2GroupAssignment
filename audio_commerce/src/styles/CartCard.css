@@ -1,0 +1,55 @@
+.cart-card-con{
+    display: flex;
+    flex-direction: row !important;
+    margin: auto;
+    border: none;
+    background-color: #FAFAFA;
+    border-radius: 25px;
+    margin-top: 2vh;
+}
+
+.cart-card-img{
+    width: 13rem;
+    padding: 2rem;
+}
+
+.cart-card-body{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.cart-card-title{
+    font-family: "Josefin Sans", sans-serif !important;
+    font-size: x-large;
+    font: bold;
+}
+
+.product-specs{
+    font-family: "Josefin Sans", sans-serif !important;
+    font-weight: 300;
+    color: #776E6E;
+}
+
+.change-unit{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.unit-no{
+    width: 30%;
+    text-align: center;
+}
+
+.individual-price{
+    margin-top: 1vh;
+    text-align: right;
+    color: #776E6E;
+}
+
+.total-price{
+    margin-top: 4vh;
+    text-align: right;
+    color: #222222;
+}
