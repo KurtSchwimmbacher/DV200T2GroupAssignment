@@ -11,7 +11,8 @@
 }
 
 .back-btn:hover{
-    font-weight: bold;
+    color: #FF6E1F !important;
+    cursor: pointer;
 }
 
 .line-border{
@@ -73,4 +74,5 @@
 
 .cont-shopping-btn:hover{
     color: #FF6E1F;
+    cursor: pointer;
 }

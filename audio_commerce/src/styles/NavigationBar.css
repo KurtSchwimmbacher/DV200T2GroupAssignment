@@ -36,13 +36,12 @@
 
 .cart-btn:hover ,.cart-btn::after{
     background-color: #ffffff;
-    color: #222222;
-    font-weight: bold;
+    color: #FF6E1F;
     border: 2px solid #222222;
 }
 
 .navbar-link:hover{
-    font-weight: bold;
+    color: #FF6E1F;
     cursor: pointer;
 }
 
