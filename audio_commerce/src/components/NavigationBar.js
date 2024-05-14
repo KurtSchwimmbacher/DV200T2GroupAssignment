@@ -9,6 +9,7 @@ import Logo from '../assets/logo/logo-2.svg';
 
 // import link
 import { Link } from "react-router-dom";
+import AccountModal from './AccountModal';
 
 function NavigationBar() {
   return (
@@ -45,10 +46,9 @@ function NavigationBar() {
               <Button className='cart-btn' variant="primary">Cart</Button>
             </Link>
           </Navbar.Text>
-          {/* replace with icon and modal for account */}
-          <Link to="/login" className='navbar-link'>
-              Account
-          </Link>
+          
+
+          <AccountModal className="navbar-link" />
         </Nav>
       </Navbar.Collapse>
     </Container>

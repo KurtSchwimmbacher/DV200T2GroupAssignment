@@ -1,0 +1,56 @@
+.account-icon{
+    color: #222222;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+.account-icon:hover{
+    cursor: pointer;
+    color: #FF6E1F;
+}
+
+.close-icon{
+    margin-left: 95%;
+}
+.close-icon:hover{
+    color: #FF6E1F;
+    cursor: pointer;
+}
+
+.modal{
+    font-family: "Josefin Sans", sans-serif !important;
+    color: #222222;
+    border: none;
+
+
+}
+
+.modal-title{
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 5vh;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-btn{
+    display: -webkit-inline-box;
+    text-decoration: none;
+    color: #222222 !important;
+    margin-top: 2vh;
+}
+
+.link-btn:hover{
+    cursor: pointer;
+    color: #FF6E1F !important;
+}
+
+.link-text{
+    color: #222222 !important;
+    margin-right: 1rem;
+    font-weight: 200;
+}
