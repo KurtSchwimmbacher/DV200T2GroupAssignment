@@ -39,28 +39,36 @@ function Products() {
 
                 <Col className="col productsPanel">
                     <Row className="prod-panel-whole">
-                        <Col className="col-12 prPan-filterSort align-items-start">
+                        <Col className="col-12 prod-filter">
                             {/*cont for displaying applied filters and sort*/}
-                            <div className="by-applied-container p-3 mb-2">
-                                <ul className="by-applied">
-                                    <li className="sortedBy">
-                                        <i className="bi bi-dot"></i> Sorted By:
-                                    </li>
-                                    <li className="filtApplied">
-                                        <i className="bi bi-dot"></i> Filters Applied: 
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="sorting-drop p-3">
-                                <SortingComp />
-                            </div>
+                            <Row className="prPan-filterSort">
+                                <Col>
+                                    <div className="by-applied-container">
+                                        <ul className="by-applied">
+                                            <li className="sortedBy">
+                                                <i className="bi bi-dot"></i> Sorted By:
+                                            </li>
+                                            <li className="filtApplied">
+                                                <i className="bi bi-dot"></i> Filters Applied: 
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </Col>
+                                <Col>
+                                    <div className="sorting-drop">
+                                        <SortingComp />
+                                    </div>
+                                </Col>
+                            </Row>
                         </Col>
-                        <Col className="prPan-items ">
+                        <Col className="prPan-items">
                             {/*cont for displaying products*/}
                             <Row className="justify-content-md-center">
                                 {/*Products go below*/}
-                                <h1>Hold Tight! Products are launching soon :{')'} </h1>
-                                <Col className="col"> 
+                                <Col className="col product-container"> 
+                                    <ProductCard />
+                                </Col>
+                                <Col className="col product-container"> 
                                     <ProductCard />
                                 </Col>
                             </Row>  

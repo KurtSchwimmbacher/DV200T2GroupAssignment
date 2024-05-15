@@ -13,7 +13,7 @@
 .link-con{
     display: flex;
     flex-direction: row;
-
+    margin-left: 25rem !important;
 }
 
 .navbar-link,.navbar-link-brand ,.navbar-link-cart{
@@ -58,3 +58,10 @@
     width: 0px;
 }
 
+.navbar-link-modal{
+    vertical-align: middle;
+}
+
+.account-link{
+    width: 0 !important;
+}

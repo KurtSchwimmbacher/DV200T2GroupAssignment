@@ -46,9 +46,7 @@ function NavigationBar() {
               <Button className='cart-btn' variant="primary">Cart</Button>
             </Link>
           </Navbar.Text>
-          
-
-          <AccountModal className="navbar-link" />
+          <AccountModal className="navbar-link account-link" />
         </Nav>
       </Navbar.Collapse>
     </Container>
