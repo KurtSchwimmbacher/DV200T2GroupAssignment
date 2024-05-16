@@ -27,13 +27,14 @@ h1{
 }
 
 .by-applied li{
-    padding-right: 10%;
+    padding-right: 5%;
     
     text-decoration: none;
+    display: inline-block;
 }
 
 .prPan-items{
-    height: 500px;
+    margin-bottom: 5vh;
 }
 
 .filterPanel{
@@ -42,7 +43,7 @@ h1{
 }
 
 .product-container{
-    width: 60%; 
+    width: 50%; 
 }
 
 .prPan-items{
@@ -54,12 +55,13 @@ h1{
 }
 
 .prPan-filterSort{
-    margin-bottom: 15vh;
-    width: 70%;
+    width: 85%;
+    margin-bottom: 4vh;
 }
 
 .prod-filter{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4vh;
 }

@@ -46,15 +46,15 @@ function Products() {
                                     <div className="by-applied-container">
                                         <ul className="by-applied">
                                             <li className="sortedBy">
-                                                <i className="bi bi-dot"></i> Sorted By:
+                                                {/* <i className="bi bi-dot"></i>*/} Sorted By: 
                                             </li>
                                             <li className="filtApplied">
-                                                <i className="bi bi-dot"></i> Filters Applied: 
+                                                 {/*<i className="bi bi-dot"></i> */} Filters Applied: 
                                             </li>
                                         </ul>
                                     </div>
                                 </Col>
-                                <Col>
+                                <Col xs lg="2">
                                     <div className="sorting-drop">
                                         <SortingComp />
                                     </div>
@@ -65,10 +65,16 @@ function Products() {
                             {/*cont for displaying products*/}
                             <Row className="justify-content-md-center">
                                 {/*Products go below*/}
-                                <Col className="col product-container"> 
+                                <Col className="col-3 product-container"> 
                                     <ProductCard />
                                 </Col>
-                                <Col className="col product-container"> 
+                                <Col className="col-3 product-container"> 
+                                    <ProductCard />
+                                </Col>
+                                <Col className="col-3 product-container"> 
+                                    <ProductCard />
+                                </Col>
+                                <Col className="col-3 product-container"> 
                                     <ProductCard />
                                 </Col>
                             </Row>  
