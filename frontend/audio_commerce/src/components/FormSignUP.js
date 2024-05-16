@@ -2,11 +2,18 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function FormSignUP() {
 
     const [form,setForm] = useState({});
     const [errors,setErrors] = useState({});
+
+    // store fields
+    const [name,setName] = useState('');
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+    const [message, setMessage] = useState('');
    
     const setField = (field, value) =>{
         setForm({
@@ -67,6 +74,7 @@ function FormSignUP() {
 
     const handleSubmit = e => {
         e.preventDefault();
+
         const {email,username,password} = form;
 
         const formErrors = validateForm();
@@ -78,9 +86,22 @@ function FormSignUP() {
         // if there are no errors
         else{
             console.log("Form Submitted")
-            console.log(form)
+            setEmail(email);
+            setName(username);
+            setPassword(password);
+
+            // post the details
+            try{
+                const response = await axios.post('http://localhost:5000/api/users/register',
+                    name,
+                    email,
+                    password,
+                )
+                setMessage('User created successfully!');
+            } catch (error){
+                setMessage('Error creating user.');
+            }
         }
-        console.log(form)
     }
 
     return(
