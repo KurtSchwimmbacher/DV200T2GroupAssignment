@@ -67,6 +67,7 @@ function FormSignUP() {
 
     const handleSubmit = e => {
         e.preventDefault();
+        const {email,username,password} = form;
 
         const formErrors = validateForm();
         // if the list of errors is more than 0
