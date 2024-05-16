@@ -1,5 +1,5 @@
 h1{
-    font-family: "Josefin Sans", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -18,4 +18,19 @@ h1{
 
 .pageHead{
     margin-top: 5%;
+}
+
+.image{
+  width: 630px;
+  height: 504px;
+  background-image: url(../assets/images/battery.jpg); 
+  background-position: center;
+  background-size: cover;
+  margin-top: 20px;
+  border-radius: 25px;
+}
+
+.products{
+  margin-top: 30px;
+  margin-bottom: 50px;
 }

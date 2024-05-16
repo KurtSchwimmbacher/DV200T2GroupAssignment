@@ -1,29 +1,49 @@
 h1{
     font-family: "Josefin Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
+h4{
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+
+.filt-prod-cont{
+    border-top: solid 0.5px black;
+    padding-top: 10px;
+}
 .pageHead h1{
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300 !important;
-    font-style: normal;
-
-  
-  border-bottom: solid 0.5px black;
-  padding-bottom: 10px;
+    font-style: normal;    
+    border-bottom: none !important;
 }
 
 .pageHead{
     margin-top: 5%;
+    border-bottom: none !important;
+}
+
+.pageHead-page-toggle{
+    margin-top: 5%;
+    border-bottom: none !important;
 }
 
 .by-applied{
     padding: 5px;
     text-decoration: none;
     display: inline;
+
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400 !important;
+    font-style: normal;
 }
 
 .by-applied li{
@@ -55,7 +75,7 @@ h1{
 }
 
 .prPan-filterSort{
-    width: 85%;
+    width: 95%;
     margin-bottom: 4vh;
 }
 
@@ -64,4 +84,51 @@ h1{
     justify-content: center;
     align-items: center;
     margin-bottom: 4vh;
+}
+
+.category-header{
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600 !important;
+    font-style: normal;
+    padding-bottom: 25px;
+}
+
+.show-all-prod{
+    background-color: #FF6E1F;
+    border: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400 !important;
+    font-style: normal;
+}
+
+.show-wishlist{
+    background-color: rgba(255, 255, 255, 0);
+    color: #1e1e1e; 
+    border: 1.5px solid #1e1e1e;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400 !important;
+    font-style: normal;
+}
+
+.show-all-prod:hover{
+    background-color: #1e1e1e;
+    color: white;
+    border: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400 !important;
+    font-style: normal;
+}
+
+.show-wishlist:hover{
+    background-color: #1e1e1e;
+    color: white; 
+    border: 1.5px solid #1e1e1e;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400 !important;
+    font-style: normal;
 }

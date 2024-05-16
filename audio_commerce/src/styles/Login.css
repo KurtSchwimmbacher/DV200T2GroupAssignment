@@ -4,7 +4,7 @@
 }
 
 .form-con{
-    margin-top: 5vh;
+    margin-top: 0vh;
     font-family: "Josefin Sans", sans-serif !important;
     padding: 5rem;
 }
@@ -31,4 +31,13 @@
     width: 60%;
     margin-left: 20%;
     color: #222222;
+}
+
+.link-to-signup {
+    text-decoration: none;
+    color: #222222 !important;
+}
+
+.link-to-signup:hover{
+    color: #FF6E1F !important;
 }

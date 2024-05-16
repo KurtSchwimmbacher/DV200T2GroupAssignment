@@ -6,6 +6,7 @@ import Products from './pages/Products';
 import Community from './pages/Community';
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
+import SignUp from './pages/SignUp';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route path="/community" element={<Community />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
     </Routes>
   </BrowserRouter>
   );

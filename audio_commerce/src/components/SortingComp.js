@@ -6,39 +6,22 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-bootstrap/Dropdown'; 
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function SortingComp(){
 
     return(
         <>
-        <Container flex>
-            <Row>
-                <Col>
-                    <Dropdown className="d-inline mx-2 sorting_dropdown" autoClose="outside">
-                        {/*Dropdown Name*/}
-                        <Dropdown.Toggle id="dropdown-autoclose-outside">
-                        Sort Products By: 
-                        </Dropdown.Toggle>
-
-                        {/*Dropdown Items*/}
-                        <Dropdown.Menu>
-                            <Dropdown.Item href="#" className="sortCat">Editors Pick</Dropdown.Item>
-                            <Dropdown.Item href="#" className="sortCat">Popularity</Dropdown.Item>
-                            <Dropdown.Item href="#" className="sortCat">Price: High - Low</Dropdown.Item>
-                            <Dropdown.Item href="#" className="sortCat">Price: Low - High</Dropdown.Item>
-                            <Dropdown.Item href="#" className="sortCat">A-Z</Dropdown.Item>
-                            <Dropdown.Item href="#" className="sortCat">Z-A</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </Col>
-                <Col>
-                    <div>
-                        <span><i className="bi bi-grid-fill"></i></span>
-                        <span><i className="bi bi-list"></i></span>
-                    </div>
-                </Col>
-            </Row>
-        </Container>
+       
+        <DropdownButton id="dropdown-basic-button" className="sorting_dropdown" title="Sort Products By:">
+            <Dropdown.Item href="#/action-1" className="sortCat">Editors Pick</Dropdown.Item>
+            <Dropdown.Item href="#/action-2" className="sortCat">Popularity</Dropdown.Item>
+            <Dropdown.Item href="#/action-3" className="sortCat">Price: High - Low</Dropdown.Item>
+            <Dropdown.Item href="#/action-2" className="sortCat">Price: Low - High</Dropdown.Item>
+            <Dropdown.Item href="#/action-3" className="sortCat">A-Z</Dropdown.Item>
+            <Dropdown.Item href="#/action-3" className="sortCat">Z-A</Dropdown.Item>
+        </DropdownButton>
+                
         </>
     );
 }

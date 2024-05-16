@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function FormLogin() {
+function FormSignUP() {
 
     const [form,setForm] = useState({});
     const [errors,setErrors] = useState({});
@@ -29,7 +29,7 @@ function FormLogin() {
     }
 
     const validateForm = ()=>{
-        const {email,username,password} = form;
+        const {email,username,password,confirmPassword} = form;
         const newErrors = {}
         const regexLC = /^(?=.*[a-z])/; 
         const regexUC = /(?=.*[A-Z])/;
@@ -57,6 +57,10 @@ function FormLogin() {
             newErrors.password = 'Password must contain one special character (@ , $ , . , # , ! , % , * , ? , & , ^)'
         else if(!regexNum.test(password))
             newErrors.password = 'Password must contain one number (0-9)'
+        if(!confirmPassword || confirmPassword === '')
+            newErrors.confirmPassword = 'Confirm Password is a required field'
+        else if(!(confirmPassword === password))
+            newErrors.confirmPassword = 'Passwords do not match'
 
         return newErrors;
     }
@@ -80,20 +84,6 @@ function FormLogin() {
 
     return(
         <Form>
-            <Form.Group className="mb-3" controlId="formBasicUsername">
-                <Form.Label>Username</Form.Label>
-                <Form.Control type="text" placeholder="Username" 
-                    value={form.username}
-                    onChange={e=>setField('username', e.target.value)}
-                    isInvalid={!!errors.username}
-                />
-                    <Form.Control.Feedback type='invalid'>
-                        {errors.username}
-                    </Form.Control.Feedback>
-                <Form.Text className="text-muted">
-                
-                </Form.Text>
-            </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email Address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email"
@@ -108,6 +98,22 @@ function FormLogin() {
                 
                 </Form.Text>
             </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicUsername">
+                <Form.Label>Username</Form.Label>
+                <Form.Control type="text" placeholder="Username" 
+                    value={form.username}
+                    onChange={e=>setField('username', e.target.value)}
+                    isInvalid={!!errors.username}
+                />
+                    <Form.Control.Feedback type='invalid'>
+                        {errors.username}
+                    </Form.Control.Feedback>
+                <Form.Text className="text-muted">
+                
+                </Form.Text>
+            </Form.Group>
+
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" 
@@ -119,21 +125,32 @@ function FormLogin() {
                     {errors.password}
                 </Form.Control.Feedback>
             </Form.Group>  
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Confirm Password</Form.Label>
+                <Form.Control type="password" placeholder="Password" 
+                    value={form.confirmPassword}
+                    onChange={e=> setField('confirmPassword',e.target.value)}
+                    isInvalid={!!errors.confirmPassword}
+                />
+                <Form.Control.Feedback type='invalid'>
+                    {errors.confirmPassword}
+                </Form.Control.Feedback>
+            </Form.Group>
 
             <Button variant="dark" type="submit" onClick={handleSubmit} className="login-btn">
-                Login
+                Create Account
             </Button>
 
             <p className="create-account-title">
-                don’t have an account?
+                already have an account?
             </p>
             <Button variant="link" className="create-link-btn">
-                <Link to="/signup" className='link-to-signup'>
-                    Create an account 
-                </Link>  
+                <Link to="/login" className='link-to-signup'>
+                   Login
+                </Link>    
             </Button>
         </Form>
     );
 }
 
-export default FormLogin; 
+export default FormSignUP; 

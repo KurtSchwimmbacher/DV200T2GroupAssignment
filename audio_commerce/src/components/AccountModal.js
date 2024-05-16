@@ -31,7 +31,7 @@ function AccountModal() {
                             <ArrowRight color='#FF6E1F' size={28} />
                         </Link>
     
-                        <Link to="/" className='link-btn'>
+                        <Link to="/signup" className='link-btn'>
                             <h4 className='link-text'>
                                 Sign Up
                             </h4>

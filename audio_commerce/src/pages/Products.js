@@ -1,9 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-bootstrap-icons";
+import { useState } from "react";
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ButtonGroup from 'react-bootstrap/ButtonGroup'; 
+import Button from 'react-bootstrap/Button';
 
 import NavigationBar from "../components/NavigationBar";
 import MarqComp from "../components/MarqComp";
@@ -12,10 +15,13 @@ import ProductCard from "../components/ProductCard";
 import SortingComp from "../components/SortingComp";
 import FilterComp from "../components/FilterComp";
 
+
 import "../styles/ProductsPage.css";
 
 function Products() {
 
+    //below is the useState that controls the page content 
+    const [view, setView] = useState('allProducts'); 
    
     return(
         <>
@@ -26,12 +32,18 @@ function Products() {
         <MarqComp className="marquee-prod-pg"/>
 
         <Container className="productsMainCont">
-            <Row className="row hero">
-                <Col className="col-12 pageHead">
+            <Row className="top-title">
+                <Col className="pageHead">
                     <h1>Products</h1>
                 </Col>
+                <Col className="toggle-wish align-items-end pageHead-page-toggle" md="auto">
+                <ButtonGroup aria-label="Basic example" className="show-page-filt">
+                    <Button variant="secondary" className="show-all-prod" onClick={() => setView('allProducts')}>All Products</Button>
+                    <Button variant="secondary" className="show-wishlist" onClick={() => setView('wishlist')}>My Wishlist</Button>
+                </ButtonGroup>
+                </Col>
             </Row>
-            <Row>
+            <Row className="filt-prod-cont">
                 <Col className="col-md-auto filterPanel">
                     {/*Panel for filters*/}
                     <FilterComp />
@@ -42,6 +54,9 @@ function Products() {
                         <Col className="col-12 prod-filter">
                             {/*cont for displaying applied filters and sort*/}
                             <Row className="prPan-filterSort">
+                                <Col className="col-12">
+                                    <h1 className="category-header">Showing All</h1>
+                                </Col>
                                 <Col>
                                     <div className="by-applied-container">
                                         <ul className="by-applied">
@@ -54,7 +69,7 @@ function Products() {
                                         </ul>
                                     </div>
                                 </Col>
-                                <Col xs lg="2">
+                                <Col md="auto">
                                     <div className="sorting-drop">
                                         <SortingComp />
                                     </div>
@@ -63,21 +78,33 @@ function Products() {
                         </Col>
                         <Col className="prPan-items">
                             {/*cont for displaying products*/}
-                            <Row className="justify-content-md-center">
-                                {/*Products go below*/}
-                                <Col className="col-3 product-container"> 
-                                    <ProductCard />
-                                </Col>
-                                <Col className="col-3 product-container"> 
-                                    <ProductCard />
-                                </Col>
-                                <Col className="col-3 product-container"> 
-                                    <ProductCard />
-                                </Col>
-                                <Col className="col-3 product-container"> 
-                                    <ProductCard />
-                                </Col>
-                            </Row>  
+
+                            {/*Displaying unfiltered or default products*/}
+                            {view === 'allProducts' && (
+                                <Row className="justify-content-md-center">
+                                    {/*Products go below*/}
+                                    <Col className="col-3 product-container"> 
+                                        <ProductCard />
+                                    </Col>
+                                    <Col className="col-3 product-container"> 
+                                        <ProductCard />
+                                    </Col>
+                                    <Col className="col-3 product-container"> 
+                                        <ProductCard />
+                                    </Col>
+                                    <Col className="col-3 product-container"> 
+                                        <ProductCard />
+                                    </Col>
+                                </Row>  
+                            )}
+
+                            {view === 'wishlist' && (
+                                <Row>
+                                    <Col>
+                                        <h4>please log in to view your wishlist</h4>
+                                    </Col>
+                                </Row>
+                            )}
                         </Col>
                     </Row>
                 </Col>
