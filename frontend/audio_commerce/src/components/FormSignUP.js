@@ -72,7 +72,7 @@ function FormSignUP() {
         return newErrors;
     }
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
 
         const {email,username,password} = form;
@@ -92,11 +92,11 @@ function FormSignUP() {
 
             // post the details
             try{
-                const response = await axios.post('http://localhost:5000/api/users/register',
+                const response = await axios.post('http://localhost:5000/api/users/register',{
                     name,
                     email,
                     password,
-                )
+                })
                 setMessage('User created successfully!');
             } catch (error){
                 setMessage('Error creating user.');
