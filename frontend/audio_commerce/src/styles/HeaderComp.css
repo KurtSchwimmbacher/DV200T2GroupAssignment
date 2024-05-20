@@ -1,0 +1,22 @@
+/* Basic styling for the media elements */
+.media {
+  object-fit: cover;
+  width: 100%;
+  height: 80vh;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  margin-bottom: 0;
+
+  transform: scale(0.5); /* Start at half size */
+  transition: transform 1.5s ease-in-out, width 1.5s ease-in-out; /* Transition for the scale and width change */
+  opacity: 0; 
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out, width 1.5s ease-in-out; /* Transition for the opacity, scale, and width */
+}
+
+/* Scale-up animation class */
+.scale-up {
+  width: 100%; 
+  transform: scale(1); 
+  opacity: 1; 
+}

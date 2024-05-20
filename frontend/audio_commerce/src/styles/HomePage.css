@@ -1,15 +1,6 @@
 /* insert fonts and colours */
 
 
-.video-home-pg{
-    object-fit: cover;
-    width: 100%;
-    height: 80vh;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    margin-bottom: 0;
-}
 
 .marquee-comp{
     font-family: "Josefin Sans", sans-serif;
