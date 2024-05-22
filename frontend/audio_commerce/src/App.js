@@ -9,20 +9,24 @@ import Login from "./pages/Login";
 import SignUp from './pages/SignUp';
 
 
+import { UserProvider } from './UserContext';
+
 function App() {
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/product/:id" element={<SingleProduct />} /> */}
-          <Route path="/singleproduct" element={<SingleProduct />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-        </Routes>
-      </BrowserRouter>
+      <UserProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/* <Route path="/product/:id" element={<SingleProduct />} /> */}
+            <Route path="/singleproduct" element={<SingleProduct />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
+        </BrowserRouter>
+      </UserProvider>
   );
 }
 

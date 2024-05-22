@@ -1,14 +1,28 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect, useContext } from 'react';
+import { Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import UserContext from './UserContext';
 
 function FormLogin() {
 
     const [form,setForm] = useState({});
     const [errors,setErrors] = useState({});
     const [message,setMessage] = useState('');
+    const [loggedIn, setLoggedIn] = useState(false);
+    const navigate = useNavigate();
+    const { setUser } = useContext(UserContext);
+
+
+
+    useEffect(()=>{
+        if(loggedIn){
+            alert('Logged In Successfully')
+            navigate("/");
+            
+        }
+    },[loggedIn])
 
     const setField = (field, value) =>{
         setForm({
@@ -83,6 +97,8 @@ function FormLogin() {
 
                 if (user) {
                     setMessage('Login successful!');
+                    setUser(user); // Set user in context
+                    setLoggedIn(true);
                 } else {
                     setMessage('Invalid username or password.');
                 }
