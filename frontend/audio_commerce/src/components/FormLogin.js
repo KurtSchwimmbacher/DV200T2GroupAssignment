@@ -2,6 +2,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function FormLogin() {
 
@@ -61,7 +62,7 @@ function FormLogin() {
         return newErrors;
     }
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
 
         const formErrors = validateForm();
@@ -72,10 +73,15 @@ function FormLogin() {
         }
         // if there are no errors
         else{
-            console.log("Form Submitted")
-            console.log(form)
+            try {
+                const response = await axios.post('http://localhost:5000/api/users/');
+                console.log(response);
+                // Clear the form after successful submission
+                setForm({});
+            } catch (error) {
+                console.log("error fetching users")
+            }
         }
-        console.log(form)
     }
 
     return(

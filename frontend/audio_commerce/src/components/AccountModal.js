@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from "react-router-dom";
-import { useUser } from './UserContext'; // Import the user context
 
 import "../styles/AccountModal.css";
 
-import { PersonCircle, ArrowRight, XLg } from 'react-bootstrap-icons';
+import {PersonCircle, ArrowRight, XLg} from 'react-bootstrap-icons';
 
 function AccountModal() {
     const [show, setShow] = useState(false);
-    const { user } = useUser(); // Access the user state from context
+
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -21,26 +20,24 @@ function AccountModal() {
             <Modal className='modal' show={show} onHide={handleClose}>
                 <Modal.Body className='modal-body'>
                     <XLg color='#FF6E1F' size={28} className='close-icon' onClick={handleClose} />
-                    {user ? (
-                        <div>
-                            <h5 className='modal-title'>Welcome, {user.username}</h5>
-                            {/* Add more user account details here */}
-                        </div>
-                    ) : (
-                        <>
-                            <h5 className='modal-title'>LOG IN TO VIEW ACCOUNT</h5>
-                            <div className='modal-buttons'>
-                                <Link to="/login" className='link-btn'>
-                                    <h4 className='link-text'>Login</h4>
-                                    <ArrowRight color='#FF6E1F' size={28} />
-                                </Link>
-                                <Link to="/signup" className='link-btn'>
-                                    <h4 className='link-text'>Sign Up</h4>
-                                    <ArrowRight color='#FF6E1F ' size={28}/>
-                                </Link>
-                            </div>
-                        </>
-                    )}
+                    <h5 className='modal-title'>
+                        LOG IN TO VIEW ACCOUNT
+                    </h5>
+                    <div className='modal-buttons'>
+                        <Link to="/login" className='link-btn'>
+                            <h4 className='link-text'>
+                                Login
+                            </h4>
+                            <ArrowRight color='#FF6E1F' size={28} />
+                        </Link>
+    
+                        <Link to="/signup" className='link-btn'>
+                            <h4 className='link-text'>
+                                Sign Up
+                            </h4>
+                            <ArrowRight color='#FF6E1F ' size={28}/>
+                        </Link>
+                    </div>
                 </Modal.Body>
             </Modal>
         </>
