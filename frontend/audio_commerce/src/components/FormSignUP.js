@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useUser } from './UserContext'; // Import the user context
 
 function FormSignUP() {
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
     const [message, setMessage] = useState('');
+    const { setUser } = useUser(); // Access the setUser function from context
 
     const setField = (field, value) => {
         setForm({
@@ -52,27 +54,28 @@ function FormSignUP() {
     };
 
     const handleSubmit = async e => {
-    e.preventDefault();
+        e.preventDefault();
 
-    const formErrors = validateForm();
-    if (Object.keys(formErrors).length > 0) {
-        setErrors(formErrors);
-    } else {
-        try {
-            const response = await axios.post('http://localhost:5000/api/users/register', {
-                name: form.username,
-                email: form.email,
-                password: form.password,
-            });
-            // Clear the form after successful submission
-            setForm({});
-            setMessage('User created successfully!');
-        } catch (error) {
-            setMessage('Error creating user.');
+        const formErrors = validateForm();
+        if (Object.keys(formErrors).length > 0) {
+            setErrors(formErrors);
+        } else {
+            try {
+                const response = await axios.post('http://localhost:5000/api/users/register', {
+                    name: form.username,
+                    email: form.email,
+                    password: form.password,
+                });
+                // Update user context
+                setUser({ username: form.username });
+                // Clear the form after successful submission
+                setForm({});
+                setMessage('User created successfully!');
+            } catch (error) {
+                setMessage('Error creating user.');
+            }
         }
-    }
-};
-
+    };
 
     return (
         <Form>

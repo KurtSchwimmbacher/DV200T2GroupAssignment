@@ -1,4 +1,5 @@
 import './App.css';
+import { UserProvider } from './components/UserContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import SingleProduct from './pages/SingleProduct';
@@ -11,18 +12,20 @@ import SignUp from './pages/SignUp';
 
 function App() {
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      {/* <Route path="/product/:id" element={<SingleProduct />} /> */}
-      <Route path="/singleproduct" element={<SingleProduct />} />
-      <Route path="/products" element={<Products />} />
-      <Route path="/community" element={<Community />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
-    </Routes>
-  </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/product/:id" element={<SingleProduct />} /> */}
+          <Route path="/singleproduct" element={<SingleProduct />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 
