@@ -8,7 +8,8 @@ function FormLogin() {
 
     const [form,setForm] = useState({});
     const [errors,setErrors] = useState({});
-   
+    const [message,setMessage] = useState('');
+
     const setField = (field, value) =>{
         setForm({
             // preserves field object
@@ -74,12 +75,22 @@ function FormLogin() {
         // if there are no errors
         else{
             try {
-                const response = await axios.post('http://localhost:5000/api/users/');
-                console.log(response);
-                // Clear the form after successful submission
+                const response = await axios.get('http://localhost:5000/api/users');
+                const users = response.data;
+                console.log(users)
+                const user = users.find(user => user.email === form.email && user.password === form.password);
+                console.log(user)
+
+                if (user) {
+                    setMessage('Login successful!');
+                } else {
+                    setMessage('Invalid username or password.');
+                }
+
+                // Clear the form after submission
                 setForm({});
             } catch (error) {
-                console.log("error fetching users")
+                setMessage('Error fetching users.');
             }
         }
     }
@@ -138,6 +149,7 @@ function FormLogin() {
                     Create an account 
                 </Link>  
             </Button>
+            {message && <p>{message}</p>}
         </Form>
     );
 }

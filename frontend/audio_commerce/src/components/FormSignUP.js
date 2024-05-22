@@ -16,7 +16,7 @@ function FormSignUP() {
     useEffect(()=>{
         if(loggedIn){
             alert("Account Created Successfully")
-            navigate("/");
+            navigate("/login");
             
         }
     },[loggedIn])
