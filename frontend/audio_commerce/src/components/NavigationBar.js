@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 
 import "../styles/NavigationBar.css";
 
-import Logo from '../assets/logo/logo-2.svg';
+import Logo from '../assets/logo/Logo-3.svg';
 
 // import link
 import { Link } from "react-router-dom";

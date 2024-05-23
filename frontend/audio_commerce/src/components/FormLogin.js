@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
-import UserContext from './UserContext';
+import UserContext from '../components/UserContext.js';
 
 function FormLogin() {
 
@@ -89,19 +89,31 @@ function FormLogin() {
         // if there are no errors
         else{
             try {
-                const response = await axios.get('http://localhost:5000/api/users');
-                const users = response.data;
-                console.log(users)
-                const user = users.find(user => user.email === form.email && user.password === form.password);
-                console.log(user)
+                const userResponse = await axios.post('http://localhost:5000/api/users/login', {
+                    name: form.username,
+                    email: form.email,
+                    password: form.password,
+                });
 
-                if (user) {
-                    setMessage('Login successful!');
-                    setUser(user); // Set user in context
+                if(userResponse.data.message === 'Login Successful'){
+                    setMessage("User logged in successfully");
                     setLoggedIn(true);
-                } else {
-                    setMessage('Invalid username or password.');
+    
+                    setUser(userResponse.data.user); // Set user in context
                 }
+
+
+
+                // const users = response.data;
+                // const user = users.find(user => user.email === form.email && user.password === form.password);
+
+                // if (user) {
+                //     setMessage('Login successful!');
+                //     setUser(user); // Set user in context
+                //     setLoggedIn(true);
+                // } else {
+                //     setMessage('Invalid username or password.');
+                // }
 
                 // Clear the form after submission
                 setForm({});

@@ -4,13 +4,20 @@ import { Link } from "react-router-dom";
 import "../styles/AccountModal.css";
 import { PersonCircle, ArrowRight, XLg } from 'react-bootstrap-icons';
 import UserContext from './UserContext';
+import Button from 'react-bootstrap/Button';
+
 
 function AccountModal() {
     const [show, setShow] = useState(false);
-    const { user } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    function handleLogout() {
+        setUser(null);
+        handleClose();
+    }
 
     return (
         <>
@@ -22,8 +29,9 @@ function AccountModal() {
                     
                     {user ? (
                         <>
-                            <h5 className='modal-title'>Welcome, {user.username}!</h5>
-                            <p>Email: {user.email}</p>
+                            <h5 className='modal-title'>Welcome, {user.name}!</h5>
+                            
+                            <Button variant='Success' className='logout-btn' onClick={handleLogout}>Sign Out</Button>
                         </>
                     ) : (
                         <>
