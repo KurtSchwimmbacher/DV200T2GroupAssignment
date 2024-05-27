@@ -30,7 +30,6 @@ function AccountModal() {
                     {user ? (
                         <>
                             <h5 className='modal-title'>Welcome, {user.name}!</h5>
-                            
                             <Button variant='Success' className='logout-btn' onClick={handleLogout}>Sign Out</Button>
                         </>
                     ) : (
