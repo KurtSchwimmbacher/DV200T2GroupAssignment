@@ -12,8 +12,9 @@ const PORT = process.env.PORT || 5000;
 // Use CORS middleware
 app.use(cors());
 
-
 app.use(express.json());
+
+app.use(express.static('productImages'))
 
 app.get('/', (req, res) => {
     res.send('Hello World');

@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-bootstrap-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -16,6 +17,7 @@ import SortingComp from "../components/SortingComp";
 import FilterComp from "../components/FilterComp";
 
 
+
 import "../styles/ProductsPage.css";
 
 function Products() {
@@ -23,6 +25,22 @@ function Products() {
     //below is the useState that controls the page content 
     const [view, setView] = useState('allProducts'); 
     const [products, setProducts] = useState([]);
+    const [allProducts, setAllProducts] = useState([])
+
+    useEffect(() => {
+        fetchProducts();
+        console.log(allProducts)
+    },[]);
+
+
+    const fetchProducts = async () =>{
+        try {
+            const productsResponse = await axios.get('http://localhost:5000/api/products/');
+            setAllProducts(productsResponse.data)
+        } catch (error) {
+            console.log("error fetching products")
+        }
+    }
 
     const fetchFilteredProducts = (filters) => {
         const url = new URL('http://localhost:3000/products');
@@ -97,18 +115,17 @@ function Products() {
                             {view === 'allProducts' && (
                                 <Row className="justify-content-md-center">
                                     {/*Products go below*/}
-                                    <Col className="col-3 product-container"> 
-                                        <ProductCard />
-                                    </Col>
-                                    <Col className="col-3 product-container"> 
-                                        <ProductCard />
-                                    </Col>
-                                    <Col className="col-3 product-container"> 
-                                        <ProductCard />
-                                    </Col>
-                                    <Col className="col-3 product-container"> 
-                                        <ProductCard />
-                                    </Col>
+                                    {allProducts.map((product,index) => (
+                                        <Col className="col-6 product-container" key={index}>
+                                            <ProductCard 
+                                                productID ={product._id}
+                                                name={product.productName}
+                                                category={product.category}
+                                                image={`http://localhost:5000/${product.imagesURL}`}
+                                                price={product.price}
+                                            />
+                                        </Col>
+                                    ))}
                                 </Row>  
                             )}
 

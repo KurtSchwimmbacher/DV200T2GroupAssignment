@@ -44,7 +44,7 @@ router.post('/addproduct', upload.single('imagesURL'), async (req, res) => {
 });
 
 // Get Products route
-router.get('/products', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const match = {};
         if (req.query.category) {
@@ -60,5 +60,19 @@ router.get('/products', async (req, res) => {
         res.status(400).json({ error: err.message });
     }
 });
+
+// Get a product by ID
+router.get('/:id', async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
+        if (!product) {
+            return res.status(404).send();
+        }
+        res.json(product);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+});
+
 
 module.exports = router; // Export the product router
