@@ -1,40 +1,51 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer'); 
+const multer = require('multer');
 const path = require('path');
 const Product = require('../models/Product');
+const fs = require('fs');
 
-//the following code handles file uploads of all types 
+// Ensure the directory exists
+const uploadDir = 'productImages/';
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+}
+
+// Multer storage configuration
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, 'productImages/'); //here the destination file is specified
+        cb(null, uploadDir); // Ensure directory exists or create it
     },
-    filename: function(req, file, cb){
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));  //unique file name created 
+    filename: function(req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)); // Create a unique filename
     }
-}); 
+});
 
-const upload = multer({ storage: storage }); 
+const upload = multer({ storage: storage });
 
-//add a new product 
-router.post('/addproduct', upload.fields([{ name: 'imagesURL' }, { name: 'schematicsURL' }, { name: 'chartURL' }]), async (req, res) => {
-
-    const { productName, category, price, imagesURL, schematicsURL, chartURL} = req.body; 
+// Add a new product route
+router.post('/addproduct', upload.single('imagesURL'), async (req, res) => {
+    console.log(req.file); // Log file information
 
     try {
-        const product = new Product({productName, category, price, imagesURL, schematicsURL, chartURL}); 
-        const savedProduct = await product.save(); //this saves new products to the database 
+        const { productName, category, price, username } = req.body;
+        const imagesURL = req.file.filename; // Get the uploaded file's filename
 
-        res.status(201).json(savedProduct); 
+        const product = new Product({ productName, category, price, imagesURL, username });
+
+        const savedProduct = await product.save(); // Save the new product to the database
+
+        res.status(201).json(savedProduct);
 
     } catch (err) {
+        console.error(err); // Log the error for debugging
         res.status(400).json({ error: err.message });
     }
 });
 
-//Get Products + 
+// Get Products route
 router.get('/products', async (req, res) => {
-    try{
+    try {
         const match = {};
         if (req.query.category) {
             match.category = req.query.category;
@@ -45,8 +56,9 @@ router.get('/products', async (req, res) => {
         const products = await Product.find(match);
         res.status(200).json(products);
     } catch (err) {
+        console.error(err); // Log the error for debugging
         res.status(400).json({ error: err.message });
     }
-}); 
+});
 
-module.exports = router; //Export the product router 
+module.exports = router; // Export the product router
