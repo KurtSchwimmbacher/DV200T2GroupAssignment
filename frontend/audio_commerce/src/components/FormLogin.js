@@ -12,12 +12,19 @@ function FormLogin() {
     const [message,setMessage] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
     const navigate = useNavigate();
-    const { setUser } = useContext(UserContext);
+    const { setUser, user } = useContext(UserContext);
 
 
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, [setUser]);
 
     useEffect(()=>{
         if(loggedIn){
+            localStorage.setItem('user', JSON.stringify(user));
             alert('Logged In Successfully')
             navigate("/");
             
@@ -102,18 +109,6 @@ function FormLogin() {
                     setUser(userResponse.data.user); // Set user in context
                 }
 
-
-
-                // const users = response.data;
-                // const user = users.find(user => user.email === form.email && user.password === form.password);
-
-                // if (user) {
-                //     setMessage('Login successful!');
-                //     setUser(user); // Set user in context
-                //     setLoggedIn(true);
-                // } else {
-                //     setMessage('Invalid username or password.');
-                // }
 
                 // Clear the form after submission
                 setForm({});

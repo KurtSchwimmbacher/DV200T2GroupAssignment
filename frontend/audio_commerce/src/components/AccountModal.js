@@ -1,11 +1,10 @@
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from "react-router-dom";
 import "../styles/AccountModal.css";
 import { PersonCircle, ArrowRight, XLg } from 'react-bootstrap-icons';
 import UserContext from './UserContext';
 import Button from 'react-bootstrap/Button';
-
 
 function AccountModal() {
     const [show, setShow] = useState(false);
@@ -14,8 +13,16 @@ function AccountModal() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, [setUser]);
+
     function handleLogout() {
-        setUser(null);
+        localStorage.removeItem('user'); // Remove user data from local storage
+        setUser(null); // Reset user context
         handleClose();
     }
 
@@ -30,7 +37,7 @@ function AccountModal() {
                     {user ? (
                         <>
                             <h5 className='modal-title'>Welcome, {user.name}!</h5>
-                            <Button variant='Success' className='logout-btn' onClick={handleLogout}>Sign Out</Button>
+                            <Button variant='success' className='logout-btn' onClick={handleLogout}>Sign Out</Button>
                         </>
                     ) : (
                         <>
