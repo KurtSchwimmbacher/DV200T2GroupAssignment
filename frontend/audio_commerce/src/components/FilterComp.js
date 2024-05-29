@@ -9,28 +9,26 @@ import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion'; 
 import ListGroup from 'react-bootstrap/ListGroup';
 
-function FilterComp(){
-    const alertClicked = () => {
-        alert('You clicked Audio Equipment category');
-      };
+function FilterComp({ onApplyFilters }) {
+    const [category, setCategory] = useState('');
+    const [priceRange, setPriceRange] = useState({ min: 0, max: 12000 });
 
-    return(
-        <>
+    return (
         <Accordion defaultActiveKey="0" flush>
             <Accordion.Item eventKey="0">
                 <Accordion.Header>Categories</Accordion.Header>
                 <Accordion.Body>
                 <ListGroup variant="flush">
-                    <ListGroup.Item>
+                    <ListGroup.Item onClick={() => setCategory('Headphones')}>
                         Headphones
                     </ListGroup.Item>
-                    <ListGroup.Item>
+                    <ListGroup.Item onClick={() => setCategory('Keyboards')}>
                         Keyboards
                     </ListGroup.Item>
-                    <ListGroup.Item>
+                    <ListGroup.Item onClick={() => setCategory('Attachments')}>
                         Attachments
                     </ListGroup.Item>
-                    <ListGroup.Item action onClick={alertClicked}>
+                    <ListGroup.Item onClick={() => setCategory('Audio Equipment')}>
                         Audio Equipment
                     </ListGroup.Item>
                 </ListGroup>
@@ -39,19 +37,13 @@ function FilterComp(){
             <Accordion.Item eventKey="1">
                 <Accordion.Header>Price</Accordion.Header>
                 <Accordion.Body>
-                    <label for="customRange3" className="form-label">$0 - $12000</label>
-                    <input type="range" className="form-range" min="0" max="5" step="0.5" id="customRange3"/>
+                    <input type="range" className="form-range" min="0" max="12000" value={priceRange.max} onChange={(e) => setPriceRange({ ...priceRange, max: e.target.value })}/>
                 </Accordion.Body>
             </Accordion.Item>
-            <Accordion.Item eventKey="2">
-                <Accordion.Header>Extra Filter</Accordion.Header>
-                <Accordion.Body>
-                    Additional Filter Items 
-                </Accordion.Body>
-            </Accordion.Item>
+            <Button onClick={() => onApplyFilters({ category, priceRange })}>Apply Filters</Button>
         </Accordion>
-        </>
     );
 }
+
 
 export default FilterComp; 

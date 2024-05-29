@@ -17,15 +17,15 @@ const productSchema = new mongoose.Schema({
         min: 0 //ensuring that users cannot add a listing with a price of 0
     },
     imagesURL:{
-        type: [String], 
+        type: String, 
         required: true
     },
-    schematicsURL:{
-        type: String,
-    },
-    chartURL:{
-        type: String,
-    }
+    // schematicsURL:{
+    //     type: String,
+    // },
+    // chartURL:{
+    //     type: String,
+    // }
     
 })
 

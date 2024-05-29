@@ -22,6 +22,20 @@ function Products() {
 
     //below is the useState that controls the page content 
     const [view, setView] = useState('allProducts'); 
+    const [products, setProducts] = useState([]);
+
+    const fetchFilteredProducts = (filters) => {
+        const url = new URL('http://localhost:3000/products');
+        if (filters.category) url.searchParams.append('category', filters.category);
+        if (filters.priceRange.min) url.searchParams.append('minPrice', filters.priceRange.min);
+        if (filters.priceRange.max) url.searchParams.append('maxPrice', filters.priceRange.max);
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => setProducts(data))
+            .catch(error => console.error('Error:', error));
+    };
+
    
     return(
         <>
@@ -46,7 +60,7 @@ function Products() {
             <Row className="filt-prod-cont">
                 <Col className="col-md-auto filterPanel">
                     {/*Panel for filters*/}
-                    <FilterComp />
+                    <FilterComp onApplyFilters={fetchFilteredProducts} />
                 </Col>
 
                 <Col className="col productsPanel">

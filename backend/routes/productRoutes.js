@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer'); 
+const path = require('path');
 const Product = require('../models/Product');
 
 //the following code handles file uploads of all types 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'upload/');
+    destination: function(req, file, cb) {
+        cb(null, 'productImages/'); //here the destination file is specified
     },
-    filename: (req, file, cb) => {
-        cb(null, Date.now()+ '-' + file.originalname); 
+    filename: function(req, file, cb){
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));  //unique file name created 
     }
 }); 
 
@@ -31,13 +32,20 @@ router.post('/addproduct', upload.fields([{ name: 'imagesURL' }, { name: 'schema
     }
 });
 
-//Get Products 
+//Get Products + 
 router.get('/products', async (req, res) => {
     try{
-        const products = await Product.find(); 
-        res.status(200).json(products); 
+        const match = {};
+        if (req.query.category) {
+            match.category = req.query.category;
+        }
+        if (req.query.minPrice && req.query.maxPrice) {
+            match.price = { $gte: req.query.minPrice, $lte: req.query.maxPrice };
+        }
+        const products = await Product.find(match);
+        res.status(200).json(products);
     } catch (err) {
-        res.status(400).json({ error: err.message }); 
+        res.status(400).json({ error: err.message });
     }
 }); 
 
