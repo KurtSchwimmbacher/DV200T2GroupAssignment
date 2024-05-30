@@ -86,4 +86,18 @@ router.get('/user/:username', async (req, res) => {
     }
 }); 
 
+// Delete a product by ID
+router.delete('/:id', async (req, res) => {
+    try {
+        const product = await Product.findByIdAndDelete(req.params.id);
+        if (!product) {
+            return res.status(404).json({ error: 'Product not found' });
+        }
+        res.json({ message: 'Product deleted successfully' });
+    } catch (err) {
+        console.error('Error deleting product:', err); // Log the error for debugging
+        res.status(400).json({ error: 'Failed to delete product' });
+    }
+});
+
 module.exports = router; // Export the product router
