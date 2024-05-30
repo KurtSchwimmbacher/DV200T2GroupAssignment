@@ -75,4 +75,15 @@ router.get('/:id', async (req, res) => {
 });
 
 
+//Fetch products by user ID 
+router.get('/user/:username', async (req, res) => {
+    try{
+        const products = await Product.find({ username: req.params.username }); 
+        res.status(200).json(products); 
+    }catch(err) {
+        console.error(err); //error logging for debugging 
+        res.status(400).json({error: err.message}); 
+    }
+}); 
+
 module.exports = router; // Export the product router
