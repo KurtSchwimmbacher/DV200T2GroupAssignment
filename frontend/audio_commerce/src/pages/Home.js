@@ -14,8 +14,8 @@ import "../styles/HomePage.css";
 import NavigationBar from "../components/NavigationBar";
 import MarqComp from "../components/MarqComp";
 import HeaderComp from "../components/HeaderComp";
-import ProductCard from "../components/ProductCard";
 import ProductHighlight from "../components/ProductHighlight";
+import GetLatestProducts from "../components/GetLatestProducts";
 
 function Home() {
 
@@ -43,15 +43,7 @@ function Home() {
             </Row>
             {/* product cards */}
             <Row>
-                <Col className="col-4">
-                    <ProductCard />
-                </Col>
-                <Col className="col-4">
-                    <ProductCard />
-                </Col>
-                <Col className="col-4">
-                    <ProductCard />
-                </Col>
+                <GetLatestProducts />
             </Row>
         </Container>
      
@@ -65,7 +57,7 @@ function Home() {
                     </div>
                 </Col>
                 <Col>
-                    <h1 className="headphone-title">Specific headphone</h1>
+                    <h1 className="headphone-title">True Wired Stereo Headphones</h1>
                     <h2 className="headphone-desc">
                         Lorem ipsum 
                     dolor sit amaet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Mauris finibus nec massa at porttitor.

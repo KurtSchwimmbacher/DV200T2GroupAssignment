@@ -11,6 +11,7 @@ const ListingForm = () => {
     const [category, setCategory] = useState("");
     const [price, setPrice] = useState("");
     const [productImg, setProductImg] = useState(null);
+    const [productDesc,setProductDesc] = useState("");
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
 
@@ -26,6 +27,7 @@ const ListingForm = () => {
         const formData = new FormData();
         formData.append('productName', productName);
         formData.append('category', category);
+        formData.append('description', productDesc);
         formData.append('price', price);
         formData.append('imagesURL', productImg);
         formData.append('username', user.name); // Add username to form data
@@ -58,6 +60,11 @@ const ListingForm = () => {
                     <option value="Microphones">Microphones</option>
                     <option value="Accessories">Accessories</option>
                 </Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId="productDesc" className='form-group'>
+                <Form.Label>Product Description</Form.Label>
+                <Form.Control type="text" name="productName" onChange={e => setProductDesc(e.target.value)} required />
             </Form.Group>
 
             <Form.Group controlId="price" className='form-group'>

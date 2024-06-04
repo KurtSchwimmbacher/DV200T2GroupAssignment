@@ -43,6 +43,17 @@ router.post('/addproduct', upload.single('imagesURL'), async (req, res) => {
     }
 });
 
+
+// Endpoint to get the latest 3 products
+router.get('/latest', async (req, res) => {
+    try {
+        const latestProducts = await Product.find().sort({ createdAt: -1 }).limit(3);
+        res.json(latestProducts);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 // Get Products route
 router.get('/', async (req, res) => {
     try {
@@ -85,6 +96,42 @@ router.get('/user/:username', async (req, res) => {
         res.status(400).json({error: err.message}); 
     }
 }); 
+
+
+// update product based on id
+router.patch('/update/:id', upload.single('imagesURL'), async (req, res) => {
+    const updates = Object.keys(req.body);
+    const allowedUpdates = ['productName', 'category', 'description', 'imagesURL', 'price'];
+    const isValidOperation = updates.every(update => allowedUpdates.includes(update));
+
+    if (!isValidOperation) {
+        return res.status(400).send({ error: 'Invalid updates!' });
+    }
+
+    try {
+        const product = await Product.findById(req.params.id);
+        if (!product) {
+            return res.status(404).send();
+        }
+
+        updates.forEach(update => {
+            product[update] = req.body[update];
+        });
+
+        if (req.file) {
+            product.imagesURL = req.file.filename; // Ensure this key matches the front-end
+        }
+
+        await product.save();
+        res.send(product);
+    } catch (error) {
+        console.error('Error updating product:', error);
+        res.status(400).send(error);
+    }
+});
+
+
+
 
 // Delete a product by ID
 router.delete('/:id', async (req, res) => {

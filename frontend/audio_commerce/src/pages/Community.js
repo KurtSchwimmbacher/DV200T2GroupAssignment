@@ -3,7 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import EditListingsModal from "../components/EditListingsModal";
 import "../styles/Community.css";
@@ -18,6 +19,7 @@ import UserContext from "../components/UserContext";
 function Community() {
   const { user } = useContext(UserContext);
   const [comments, setComments] = useState([]);
+  const [allProducts,setAllProducts] = useState([]);
 
   const addComment = (text) => {
     const newComment = {
@@ -40,6 +42,8 @@ function Community() {
   const deleteComment = (id) => {
     setComments(comments.filter((comment) => comment.id!== id));
   };
+
+
 
   return (
     <>
@@ -82,17 +86,6 @@ function Community() {
           </Col>
           <Col className="col-6 edit justify-content-end">
             <EditListingsModal />
-          </Col>
-        </Row>
-        <Row>
-          <Col className="col-4 products">
-            <ProductCard />
-          </Col>
-          <Col className="col-4 products">
-            <ProductCard />
-          </Col>
-          <Col className="col-4 products">
-            <ProductCard />
           </Col>
         </Row>
         <Row>

@@ -3,10 +3,15 @@ import { Container } from 'react-bootstrap';
 import axios from 'axios';
 import UserContext from './UserContext';
 import UserListingsUpdate from './UserListingsUpdate';
+import { useNavigate } from 'react-router-dom';
+
 
 function ListingEditCard() {
   const [listings, setListings] = useState([]);
   const { user } = useContext(UserContext); // Get the user from the context
+  const navigate = useNavigate();
+
+
 
   useEffect(() => {
     console.log(user)
@@ -31,6 +36,7 @@ function ListingEditCard() {
   const handleEdit = (listing) => {
     // Still to figure this little section out
     console.log('Edit listing:', listing);
+    navigate(`/edit/${listing._id}`); // Redirect to edit Page
   };
 
   const handleDelete = async (listingId) => {

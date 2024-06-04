@@ -18,7 +18,7 @@ function ProductCard(props) {
             <Card.Img className='card-img' variant="top" src={props.image} />
         <Card.Body>
         <Card.Text className='card-subtxt'>
-            From ${props.price}
+            From R{props.price}.00
             <Link to={`/single/${props.productID}`}>
               <ArrowRight className='view-product-btn' />
             </Link>

@@ -61,8 +61,7 @@ function SingleProduct() {
                     Product Description
                     </h4>
                     <p>
-                    Lorem ipsum 
-                    dolor sit amaet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Mauris finibus nec massa at porttitor.
+                    {productObj.description}
                     </p>
                 </Col>
             </Row>

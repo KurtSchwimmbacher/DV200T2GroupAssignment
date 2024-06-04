@@ -11,6 +11,10 @@ const productSchema = new mongoose.Schema({
         enum: ['Headphones', 'Speakers', 'Microphones', 'Accessories'],
         required: true
     },
+    description:{
+        type: String,
+        required: true
+    },
     price:{
         type: Number, 
         required: true,
@@ -31,6 +35,6 @@ const productSchema = new mongoose.Schema({
     //     type: String,
     // }
     
-})
+}, { timestamps: true });// Add timestamps to the schema
 
 module.exports = mongoose.model('Product', productSchema);

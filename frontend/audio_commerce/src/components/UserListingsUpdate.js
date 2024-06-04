@@ -7,7 +7,7 @@ function UserListingsUpdate({ listing, onEdit, onDelete }) {
     <Row>
       <Col>
         <Card className='cart-card-con'>
-          <Card.Img className='cart-card-img' variant="bottom" src={`productImages/${listing.imagesURL}`} />
+          <Card.Img className='cart-card-img' variant="bottom" src={`http://localhost:5000/${listing.imagesURL}`} style={{mixBlendMode:"multiply"}} />
           <Card.Body className='cart-card-body'>
             <Container>
               <Row>

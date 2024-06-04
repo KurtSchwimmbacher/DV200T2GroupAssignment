@@ -7,6 +7,7 @@ import Community from './pages/Community';
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import SignUp from './pages/SignUp';
+import EditProductPage from './pages/EditProductPage';
 
 
 import { UserProvider } from './components/UserContext';
@@ -23,6 +24,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path='/edit/:id' element={<EditProductPage />} />
           </Routes>
         </BrowserRouter>
       </UserProvider>
