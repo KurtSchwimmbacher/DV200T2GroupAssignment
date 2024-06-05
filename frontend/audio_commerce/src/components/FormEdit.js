@@ -18,6 +18,7 @@ const FormEdit = (props) => {
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
     const [productID, setProductID] = useState(props.id);
+    const [productImgPreview, setProductImgPreview] = useState("");
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -34,7 +35,7 @@ const FormEdit = (props) => {
         formData.append('description', productDesc);
         formData.append('price', price);
         if (productImg) {
-            formData.append('imagesURL', productImg); // Ensure this key matches the server-side
+            formData.append('imagesURL', productImg);
         }
     
         try {
@@ -48,8 +49,9 @@ const FormEdit = (props) => {
             console.error('Error updating product:', error);
             alert('Error updating product');
         }
+
+        navigate('/products')
     };
-    
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -60,7 +62,7 @@ const FormEdit = (props) => {
                 setCategory(product.category);
                 setProductDesc(product.description || "");
                 setPrice(product.price);
-                setProductImg(`http://localhost:5000/${product.imagesURL}`);
+                setProductImgPreview(`http://localhost:5000/${product.imagesURL}`);
             } catch (error) {
                 console.error("Error fetching product:", error);
             }
@@ -69,11 +71,17 @@ const FormEdit = (props) => {
         fetchProduct();
     }, [productID]);
 
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        setProductImg(file);
+        setProductImgPreview(URL.createObjectURL(file));
+    };
+
     return (
         <Container>
             <Row>
                 <Col className="col-6">
-                    <img src={productImg} alt="product img" className="img-login" />
+                    <img src={productImgPreview} alt="product img" className="img-login" />
                 </Col>
                 <Col className="col-6">
                     <Form onSubmit={handleSubmit}>
@@ -127,7 +135,7 @@ const FormEdit = (props) => {
                             <Form.Control 
                                 type="file" 
                                 name="imagesURL" 
-                                onChange={e => setProductImg(e.target.files[0])} 
+                                onChange={handleImageChange} 
                             />
                         </Form.Group>
 

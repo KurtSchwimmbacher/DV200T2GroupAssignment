@@ -101,7 +101,7 @@ router.get('/user/:username', async (req, res) => {
 // update product based on id
 router.patch('/update/:id', upload.single('imagesURL'), async (req, res) => {
     const updates = Object.keys(req.body);
-    const allowedUpdates = ['productName', 'category', 'description', 'imagesURL', 'price'];
+    const allowedUpdates = ['productName', 'category', 'description', 'price'];
     const isValidOperation = updates.every(update => allowedUpdates.includes(update));
 
     if (!isValidOperation) {
@@ -129,7 +129,6 @@ router.patch('/update/:id', upload.single('imagesURL'), async (req, res) => {
         res.status(400).send(error);
     }
 });
-
 
 
 
