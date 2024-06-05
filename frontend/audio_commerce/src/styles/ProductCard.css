@@ -29,13 +29,13 @@
 }
 
 .card-img{
-    padding: 2rem;
-    height: auto;
+    height: 50vh;
     width: 80%;
+    object-fit: contain;
     margin-left: 10%;
-    object-fit: fill;
     mix-blend-mode: multiply;
     filter: contrast(1);
+    padding: 2rem;
 }
 
 .view-product-btn{

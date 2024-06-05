@@ -3,6 +3,26 @@
     margin-top: 5vh;
 }
 
+.star-rating-con{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.star-5{
+    width: 32px;
+    height: 32px;
+    color: #222222;
+}
+
+.star-5-active{
+    width: 32px;
+    height: 32px;
+    color: #FF6E1F;
+}
+
+
+
 .add-to-cart{
     float: right;
     margin-top: 2vh;
@@ -27,8 +47,9 @@
     color: #FF6E1F;
 }
 
+
 .bottom-text-con{
-    margin-top: 12vh;
+    margin-top: 8vh;
     display: -webkit-inline-box;
     width: 100%;
 }

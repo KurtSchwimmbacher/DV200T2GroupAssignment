@@ -27,6 +27,12 @@ const productSchema = new mongoose.Schema({
     username:{
         type: String,
         required: true
+    },
+    rating:{
+        type: Number,
+        min:0,
+        max:5,
+        default:0
     }
     // schematicsURL:{
     //     type: String,

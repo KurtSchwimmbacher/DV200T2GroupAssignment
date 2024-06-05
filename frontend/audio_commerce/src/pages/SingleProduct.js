@@ -19,6 +19,7 @@ import React, { useState, useContext, useEffect } from 'react';
 
 import '../styles/SinglePage.css';
 import FooterComp from "../components/FooterComp";
+import StarRating from "../components/StarRating";
 
 function SingleProduct() {
 
@@ -29,6 +30,9 @@ function SingleProduct() {
     const [productImg,setProductImg] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [cartItem, setCartItem] = useState({})
+   
+
+
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -43,6 +47,8 @@ function SingleProduct() {
 
         fetchProduct();
     }, [productID]);
+
+
 
 
     const addToCart = async () =>{
@@ -76,6 +82,7 @@ function SingleProduct() {
             <Row>
                 <Col className="col-6">
                     <h1>{productObj.productName}</h1>
+                    <StarRating />
                     <div className="bottom-text-con">
                         <h5 className="price-tag">From ${productObj.price}</h5>
                         <div className="add-to-cart" onClick={addToCart}>
