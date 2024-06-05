@@ -7,6 +7,7 @@ import FormEdit from '../components/FormEdit';
 import { useState } from "react";
 
 import tempAsset from "../assets/images/headphone-img.png";
+import FooterComp from "../components/FooterComp";
 
 
 function EditProductPage() {
@@ -28,6 +29,8 @@ function EditProductPage() {
                 </Col>
             </Row>
         </Container>
+
+        <FooterComp />
         </>
     );
 }

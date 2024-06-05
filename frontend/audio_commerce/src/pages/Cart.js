@@ -11,6 +11,7 @@ import NavigationBar from "../components/NavigationBar";
 import CartCards from "../components/CartCards";
 
 import UserContext from '../components/UserContext';
+import FooterComp from '../components/FooterComp';
 import { Link } from "react-router-dom";
 import React, { useState, useContext, useEffect } from 'react';
 import axios from "axios";
@@ -164,6 +165,7 @@ function Cart() {
             </Row>
         </Container>
      
+        <FooterComp />
      </>
     );
 }

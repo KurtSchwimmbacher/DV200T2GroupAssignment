@@ -60,3 +60,15 @@
 .headphone-btn{
     margin-top: 5vh;
 }
+
+.footer-comp{
+    font-size: 124px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FF6E1F;
+    border-top: 2px solid #FF6E1F;
+    height: 20vh;
+    margin-bottom: 0;
+    padding-top: 5vh;
+}

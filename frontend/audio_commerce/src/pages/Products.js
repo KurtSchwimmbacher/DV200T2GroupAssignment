@@ -19,6 +19,7 @@ import FilterComp from "../components/FilterComp";
 
 
 import "../styles/ProductsPage.css";
+import FooterComp from "../components/FooterComp";
 
 function Products() {
 
@@ -142,6 +143,8 @@ function Products() {
             </Row>
         </Container>
      
+
+     <FooterComp />
      </>
     );
 }

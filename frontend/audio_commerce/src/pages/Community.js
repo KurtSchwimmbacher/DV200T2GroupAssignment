@@ -15,6 +15,7 @@ import HeaderComp from "../components/HeaderComp";
 import MarqComp from "../components/MarqComp";
 import { useContext } from "react";
 import UserContext from "../components/UserContext";
+import FooterComp from '../components/FooterComp';
 
 function Community() {
   const { user } = useContext(UserContext);
@@ -121,6 +122,8 @@ function Community() {
           </Col>
         </Row>
       </Container>
+
+      <FooterComp />
     </>
   );
 };

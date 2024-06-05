@@ -15,11 +15,10 @@ function ProductHighlight() {
 
         <div>
             <h1 className="product-title">
-                Product Highlight
+                Sony Portable Walkman
             </h1>
             <h2 className="product-desc">
-            Lorem ipsum 
-                    dolor sit amaet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Mauris finibus nec massa at porttitor.
+            The Sony Portable Walkman is a compact and versatile personal audio device, designed to provide high-quality sound on the go. Known for its iconic status since its inception, the Walkman has evolved through various models, offering a range of features that cater to music enthusiasts of all kinds.
             </h2>
             <Button className="highlight-btn" variant="dark">View Product</Button>
         </div>

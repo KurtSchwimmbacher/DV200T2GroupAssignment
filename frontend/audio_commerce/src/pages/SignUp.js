@@ -8,6 +8,7 @@ import Col from "react-bootstrap/esm/Col";
 import tempAsset from "../assets/images/headphone-img.png";
 import "../styles/Login.css";
 import FormSignUP from "../components/FormSignUP";
+import FooterComp from "../components/FooterComp";
 
 function SignUp() {
 
@@ -30,6 +31,8 @@ function SignUp() {
                 </Col>
             </Row>
         </Container>
+
+        <FooterComp />
         </>
     );
 }

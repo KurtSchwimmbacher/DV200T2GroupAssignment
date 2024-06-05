@@ -2,7 +2,9 @@
 function FooterComp() {
   return (
     <>
-        {/* insert logo */}
+        <h1 className="mt-5 footer-comp">
+          EQ
+        </h1>
     </>
   );
 }

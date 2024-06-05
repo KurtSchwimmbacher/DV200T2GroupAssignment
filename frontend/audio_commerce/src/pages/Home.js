@@ -16,6 +16,8 @@ import MarqComp from "../components/MarqComp";
 import HeaderComp from "../components/HeaderComp";
 import ProductHighlight from "../components/ProductHighlight";
 import GetLatestProducts from "../components/GetLatestProducts";
+import { Link } from "react-router-dom";
+import FooterComp from "../components/FooterComp";
 
 function Home() {
 
@@ -59,14 +61,17 @@ function Home() {
                 <Col>
                     <h1 className="headphone-title">True Wired Stereo Headphones</h1>
                     <h2 className="headphone-desc">
-                        Lorem ipsum 
-                    dolor sit amaet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Mauris finibus nec massa at porttitor.
+                    Experience superior sound quality with the True Wired Stereo Headphones, meticulously engineered for audiophiles and casual listeners alike. These headphones deliver crystal-clear audio with deep bass, balanced mids, and crisp highs, ensuring an immersive listening experience for music, podcasts, and calls.
                     </h2>
+                    <Link to={"/single/665ee32d732a748269f663ae"}>
                     <Button className="headphone-btn" variant="dark">View Product</Button>
+                    </Link>
                 </Col>
             </Row>
         </Container>
 
+
+        <FooterComp />
      </>
     );
 }

@@ -18,6 +18,7 @@ import UserContext from '../components/UserContext';
 import React, { useState, useContext, useEffect } from 'react';
 
 import '../styles/SinglePage.css';
+import FooterComp from "../components/FooterComp";
 
 function SingleProduct() {
 
@@ -108,6 +109,7 @@ function SingleProduct() {
             <img className="schematic-img" src={schematic} alt="schematic img"></img>
         </div>
      
+        <FooterComp />
      </>
     );
 }
