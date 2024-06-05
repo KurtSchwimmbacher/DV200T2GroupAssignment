@@ -11,6 +11,7 @@ import NavigationBar from "../components/NavigationBar";
 import CartCards from "../components/CartCards";
 
 import UserContext from '../components/UserContext';
+import { Link } from "react-router-dom";
 import React, { useState, useContext, useEffect } from 'react';
 import axios from "axios";
 
@@ -23,6 +24,7 @@ function Cart() {
     const [subtotal, setSubtotal] = useState(0);
     const [total, setTotal] = useState(0);
     const [VAT, setVAT] = useState(0);
+    const [quantity,setQuantity] = useState(1);
 
     useEffect(() => {
         if(user){
@@ -34,7 +36,7 @@ function Cart() {
             let tempVAT = 0;
             let tempTotal = 0;
             allProducts.map((product)=>{
-                tempSubtotal+=product.price;
+                tempSubtotal+=product.price*quantity;
             })
             tempVAT = 0.15*tempSubtotal;
             tempTotal = tempVAT+tempSubtotal;
@@ -46,8 +48,21 @@ function Cart() {
 
         calculateTotals();
 
-    },[user,allProducts]);
+    },[user,allProducts,quantity]);
 
+
+    const updateQuantity = (productId, newQuantity) => {
+        setAllProducts(prevProducts => {
+            return prevProducts.map(product => {
+                if (product._id === productId) {
+                    setQuantity(1);
+                    setQuantity(newQuantity)
+                    return { ...product, quantity: newQuantity };
+                }
+                return product;
+            });
+        });
+    };
 
     const fetchProducts = async () =>{
         try {
@@ -91,15 +106,16 @@ function Cart() {
                 ) : (
                     allProducts.map((product, index) => (
                         
-                            <CartCards 
-                                key={index}
-                                productID = {product._id}
-                                name={product.name}
-                                productImg={`http://localhost:5000/${product.imagesURL}`}
-                                quantity={product.quantity}
-                                price={product.price}
-                            />
-                        
+                        <CartCards 
+                            key={index}
+                            productID={product._id}
+                            name={product.name}
+                            productImg={`http://localhost:5000/${product.imagesURL}`}
+                            quantity={product.quantity}
+                            price={product.price}
+                            updateQuantity={updateQuantity} // Pass the updateQuantity function
+                        />
+
                     ))
                 )}
                 </Col>
@@ -140,7 +156,9 @@ function Cart() {
                     </div>
 
                     <Button variant="dark" className="checkout-btn">Proceed to Checkout</Button>
-                    <Button variant="link" className="cont-shopping-btn">Continue Shopping</Button>
+                    <Link to={"/products"}>
+                        <Button variant="link" className="cont-shopping-btn">Continue Shopping</Button>
+                    </Link>
 
                 </Col>
             </Row>

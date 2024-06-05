@@ -14,6 +14,9 @@ import axios from 'axios';
 
 function CartCards(props) {
 
+const [totalPrice, setTotalPrice] = useState(0);
+const [quantity, setQuantity] = useState(props.quantity)
+
     const handleDelete = async () =>{
         alert("deleting from cart")
         try {
@@ -23,15 +26,41 @@ function CartCards(props) {
         }
     }
 
-    const [totalPrice, setTotalPrice] = useState(0);
+    const increaseQuantity = async () => {
+    let newQuantity = props.quantity + 1;
+    try {
+        const productsResponse = await axios.patch(`http://localhost:5000/api/cart/cart-items/${props.productID}`, { quantity: newQuantity });
+        props.updateQuantity(props.productID, newQuantity); // Update the quantity in the parent component
+        setQuantity(newQuantity)
+    } catch (error) {
+        console.log("error updating quantity", error);
+    }
+}
+
+const decreaseQuantity = async () => {
+    if (props.quantity > 1) {
+        let newQuantity = props.quantity - 1;
+        try {
+            const productsResponse = await axios.patch(`http://localhost:5000/api/cart/cart-items/${props.productID}`, { quantity: newQuantity });
+            props.updateQuantity(props.productID, newQuantity); // Update the quantity in the parent component
+            setQuantity(newQuantity)
+        } catch (error) {
+            console.log("error updating quantity", error);
+        }
+    } else {
+        alert("Quantity cannot be less than 1");
+    }
+}
+
+    
 
     useEffect(()=>{
         const calculateTotalPrice= () =>{
-            setTotalPrice(props.price*props.quantity)
+            setTotalPrice(props.price*quantity)
         }
 
         calculateTotalPrice();
-    },[props.quanity])
+    },[quantity])
 
   return (
     <Card className='cart-card-con'>
@@ -44,9 +73,9 @@ function CartCards(props) {
                 </Col>
                 <Col className='col-4'>
                     <Card.Text className='change-unit'>
-                        <DashCircle className='btn-quantity' />
-                        <p className='unit-no'> {props.quantity}x </p>
-                        <PlusCircle className='btn-quantity' />
+                        <DashCircle className='btn-quantity' onClick={decreaseQuantity} />
+                        <p className='unit-no'> {quantity}x </p>
+                        <PlusCircle className='btn-quantity' onClick={increaseQuantity} />
                     </Card.Text>
                 </Col>
                 <Col className='col-2'>
