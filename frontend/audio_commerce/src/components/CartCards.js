@@ -10,7 +10,18 @@ import Col from 'react-bootstrap/esm/Col';
 import {PlusCircle, DashCircle,Trash } from 'react-bootstrap-icons';
 import { useEffect, useState } from 'react';
 
+import axios from 'axios';
+
 function CartCards(props) {
+
+    const handleDelete = async () =>{
+        alert("deleting from cart")
+        try {
+            const productsResponse = await axios.delete(`http://localhost:5000/api/cart/cart-items/${props.productID}`);
+        } catch (error) {
+            console.log("error fetching products")
+        }
+    }
 
     const [totalPrice, setTotalPrice] = useState(0);
 
@@ -47,7 +58,7 @@ function CartCards(props) {
                     </Card.Text>
                 </Col>
                 <Col className='col-1 btn-delete'>
-                    <Trash />
+                    <Trash onClick={handleDelete} />
                 </Col>
             </Row>
         </Container>

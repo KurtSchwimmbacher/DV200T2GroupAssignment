@@ -85,23 +85,24 @@ function Cart() {
             </Row>
             <Row className="cart-card">
                 {/*Products go below*/}
+                <Col className="col-7 product-container" >
                 {allProducts.length === 0 ? (
-                    <Col className="col-7">
-                        Your cart is empty
-                    </Col>
+                    <h4>Your cart is empty</h4>
                 ) : (
                     allProducts.map((product, index) => (
-                        <Col className="col-7 product-container" key={index}>
+                        
                             <CartCards 
+                                key={index}
+                                productID = {product._id}
                                 name={product.name}
                                 productImg={`http://localhost:5000/${product.imagesURL}`}
                                 quantity={product.quantity}
                                 price={product.price}
                             />
-                        </Col>
+                        
                     ))
                 )}
-
+                </Col>
                 <Col className="col-1 line-border"></Col>
                 <Col className="col-4 cart-details-col">
                     <div className="cart-details-con">
