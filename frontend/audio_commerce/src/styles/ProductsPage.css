@@ -95,7 +95,6 @@ h4{
 }
 
 .show-all-prod{
-    background-color: #FF6E1F;
     border: none;
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
@@ -104,31 +103,29 @@ h4{
 }
 
 .show-wishlist{
-    background-color: rgba(255, 255, 255, 0);
-    color: #1e1e1e; 
-    border: 1.5px solid #1e1e1e;
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400 !important;
     font-style: normal;
 }
 
-.show-all-prod:hover{
-    background-color: #1e1e1e;
+.btn-selected{
     color: white;
-    border: none;
-    font-family: "Josefin Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400 !important;
-    font-style: normal;
+    background-color: #FF6E1F !important;
+    border: 1px solid #FF6E1F;
 }
 
-.show-wishlist:hover{
-    background-color: #1e1e1e;
-    color: white; 
-    border: 1.5px solid #1e1e1e;
+.btn-unselected{
+    background-color: white;
+    color: #222222;
+    border: 1px solid #222222;
+}
+
+.show-all-prod:hover ,.show-wishlist:hover{
+    background-color: #222222;
+    border: 1px solid #FF6E1F;
+    color: white;
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400 !important;
     font-style: normal;
 }

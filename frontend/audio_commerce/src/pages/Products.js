@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-bootstrap-icons";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 import Container from 'react-bootstrap/Container';
@@ -17,22 +17,37 @@ import SortingComp from "../components/SortingComp";
 import FilterComp from "../components/FilterComp";
 
 
+import UserContext from '../components/UserContext';
+
 
 import "../styles/ProductsPage.css";
 import FooterComp from "../components/FooterComp";
 
 function Products() {
-
+    
     //below is the useState that controls the page content 
+    const { user } = useContext(UserContext);
+    
     const [view, setView] = useState('allProducts'); 
     const [products, setProducts] = useState([]);
     const [allProducts, setAllProducts] = useState([])
+    const [wishlist, setWishlist] = useState([]);
 
     useEffect(() => {
         fetchProducts();
-        console.log(allProducts)
+        fetchWishlist();
     },[]);
 
+
+    const fetchWishlist = async () =>{
+        try {
+            const wishlistResponse = await axios.get(`http://localhost:5000/api/products/liked/${user._id}`)
+            console.log(wishlistResponse.data)
+            setWishlist(wishlistResponse.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const fetchProducts = async () =>{
         try {
@@ -71,9 +86,21 @@ function Products() {
                 </Col>
                 <Col className="toggle-wish align-items-end pageHead-page-toggle" md="auto">
                 <ButtonGroup aria-label="Basic example" className="show-page-filt">
-                    <Button variant="secondary" className="show-all-prod" onClick={() => setView('allProducts')}>All Products</Button>
-                    <Button variant="secondary" className="show-wishlist" onClick={() => setView('wishlist')}>My Wishlist</Button>
-                </ButtonGroup>
+                <Button 
+                    variant={view === 'allProducts' ? 'selected' : 'unselected'} 
+                    className="show-all-prod" 
+                    onClick={() => setView('allProducts')}
+                >
+                    All Products
+                </Button>
+                <Button 
+                    variant={view === 'wishlist' ? 'selected' : 'unselected'} 
+                    className="show-wishlist" 
+                    onClick={() => setView('wishlist')}
+                >
+                    My Wishlist
+                </Button>
+            </ButtonGroup>
                 </Col>
             </Row>
             <Row className="filt-prod-cont">
@@ -132,9 +159,18 @@ function Products() {
 
                             {view === 'wishlist' && (
                                 <Row>
-                                    <Col>
-                                        <h4>please log in to view your wishlist</h4>
-                                    </Col>
+                                    {/*Products go below*/}
+                                    {wishlist.map((product,index) => (
+                                        <Col className="col-6 product-container" key={index}>
+                                            <ProductCard 
+                                                productID ={product._id}
+                                                name={product.productName}
+                                                category={product.category}
+                                                image={`http://localhost:5000/${product.imagesURL}`}
+                                                price={product.price}
+                                            />
+                                        </Col>
+                                    ))}
                                 </Row>
                             )}
                         </Col>

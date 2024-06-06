@@ -200,5 +200,20 @@ router.patch('/unlike/:id', async (req, res) => {
     }
 });
 
+// Fetch all products liked by a specific user
+router.get('/liked/:userID', async (req, res) => {
+    const { userID } = req.params;
+
+    try {
+        // Find all products where the liked array includes the userID
+        const likedProducts = await Product.find({ liked: userID });
+
+        res.status(200).json(likedProducts);
+    } catch (err) {
+        console.error('Error fetching liked products:', err); // Log the error for debugging
+        res.status(400).json({ error: err.message });
+    }
+});
+
 
 module.exports = router; // Export the product router
