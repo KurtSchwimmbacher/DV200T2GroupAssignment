@@ -40,6 +40,10 @@ app.use('/api/products', productRoutes);
 const cartRoutes = require('./routes/cartRoutes');
 app.use('/api/cart',cartRoutes);
 
+// Comment Routes
+const commentsRoutes = require('./routes/commentsRoutes');
+app.use('/api/comments',commentsRoutes);
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

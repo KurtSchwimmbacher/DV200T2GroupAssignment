@@ -22,6 +22,8 @@ import FooterComp from "../components/FooterComp";
 import StarRating from "../components/StarRating";
 import LikeComponent from "../components/LikeComponent";
 
+import ProdReview from "../components/ProdReview"; 
+
 function SingleProduct() {
 
     const { user } = useContext(UserContext);
@@ -103,6 +105,13 @@ function SingleProduct() {
                     {productObj.description}
                     </p>
                 </Col>
+            </Row>
+
+            <Row className="review-section">
+                <ProdReview 
+                productId={productID}
+                username={user.name}
+                />
             </Row>
 
             <Row className="schematic-title">
