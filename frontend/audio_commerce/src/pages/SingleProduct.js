@@ -20,6 +20,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import '../styles/SinglePage.css';
 import FooterComp from "../components/FooterComp";
 import StarRating from "../components/StarRating";
+import LikeComponent from "../components/LikeComponent";
 
 function SingleProduct() {
 
@@ -82,7 +83,10 @@ function SingleProduct() {
             <Row>
                 <Col className="col-6">
                     <h1>{productObj.productName}</h1>
-                    <StarRating />
+                    <div className="rating-like-con">
+                        <StarRating />
+                        <LikeComponent productID={productObj._id} userID={user._id} />
+                    </div>
                     <div className="bottom-text-con">
                         <h5 className="price-tag">From ${productObj.price}</h5>
                         <div className="add-to-cart" onClick={addToCart}>

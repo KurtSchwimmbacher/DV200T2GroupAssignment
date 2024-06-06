@@ -146,4 +146,59 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
+
+// Like a product
+router.patch('/like/:id', async (req, res) => {
+    const { userID } = req.body;
+
+
+    try {
+        const product = await Product.findById(req.params.id);
+
+        if (!product) {
+            return res.status(404).json({ error: 'Product not found' });
+        }
+
+        // Convert userID to string
+        const stringUserID = String(userID);
+
+        // Add userID to the liked array if not already present
+        if (!product.liked.includes(stringUserID)) {
+            product.liked.push(stringUserID);
+            await product.save();
+        }
+
+        res.status(200).json(product);
+    } catch (err) {
+        console.error(err); // Log the error for debugging
+        res.status(400).json({ error: err.message });
+    }
+});
+
+// Remove a liked product
+router.patch('/unlike/:id', async (req, res) => {
+    const { userID } = req.body;
+
+    try {
+        const product = await Product.findById(req.params.id);
+
+        if (!product) {
+            return res.status(404).json({ error: 'Product not found' });
+        }
+
+        // Remove userID from the liked array if present
+        const index = product.liked.indexOf(userID);
+        if (index !== -1) {
+            product.liked.splice(index, 1);
+            await product.save();
+        }
+
+        res.status(200).json(product);
+    } catch (err) {
+        console.error(err);
+        res.status(400).json({ error: err.message });
+    }
+});
+
+
 module.exports = router; // Export the product router

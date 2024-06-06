@@ -33,7 +33,10 @@ const productSchema = new mongoose.Schema({
         min:0,
         max:5,
         default:0
-    }
+    },
+    liked:[{
+        type: String
+    }]
     // schematicsURL:{
     //     type: String,
     // },

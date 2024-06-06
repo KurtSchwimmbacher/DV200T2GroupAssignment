@@ -3,8 +3,28 @@
     margin-top: 5vh;
 }
 
+
+.rating-like-con{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heart, .heart-active{
+    width: 32px;
+    height: 32px;
+}
+
+.heart {
+    color: #222222;
+}
+
+.heart-active{
+    color: #FF6E1F;
+}
+
 .star-rating-con{
-    width: 30%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
 }
