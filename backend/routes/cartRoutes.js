@@ -12,6 +12,8 @@ router.post('/cart-items', async (req, res) => {
     }
 });
 
+
+
 // READ all cart items for a user
 router.get('/cart-items/:username', async (req, res) => {
     try {
@@ -30,6 +32,17 @@ router.patch('/cart-items/:id', async (req, res) => {
             return res.status(404).json({ message: 'Cart item not found' });
         }
         res.json(cartItem);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+// Clear all items from a user's cart
+router.delete('/clear/:username', async (req, res) => {
+    try {
+        const username = req.params.username;
+        const result = await CartItem.deleteMany({ user: username });
+        res.json({ message: 'Cart cleared', result });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

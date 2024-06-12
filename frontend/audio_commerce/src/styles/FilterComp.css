@@ -37,3 +37,12 @@ input[type="range"]::-moz-range-thumb:focus {
     outline: none !important;
     background-color: #FF6E1F;
 }
+
+.active {
+    color: #FF6E1F !important;
+    background-color: white !important;
+    outline: 0 !important;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px !important;
+    border-bottom: 1px solid rgb(209, 207, 207) !important;
+    border-top: 1px solid rgb(209, 207, 207) !important;
+}

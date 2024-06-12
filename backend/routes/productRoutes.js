@@ -61,16 +61,23 @@ router.get('/', async (req, res) => {
         if (req.query.category) {
             match.category = req.query.category;
         }
-        if (req.query.minPrice && req.query.maxPrice) {
-            match.price = { $gte: req.query.minPrice, $lte: req.query.maxPrice };
+        if (req.query.minPrice || req.query.maxPrice) {
+            match.price = {};
+            if (req.query.minPrice) {
+                match.price.$gte = +req.query.minPrice;
+            }
+            if (req.query.maxPrice) {
+                match.price.$lte = +req.query.maxPrice;
+            }
         }
         const products = await Product.find(match);
         res.status(200).json(products);
     } catch (err) {
-        console.error(err); // Log the error for debugging
+        console.error(err);
         res.status(400).json({ error: err.message });
     }
 });
+
 
 // Get a product by ID
 router.get('/:id', async (req, res) => {

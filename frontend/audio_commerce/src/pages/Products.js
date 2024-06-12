@@ -42,7 +42,6 @@ function Products() {
     const fetchWishlist = async () =>{
         try {
             const wishlistResponse = await axios.get(`http://localhost:5000/api/products/liked/${user._id}`)
-            console.log(wishlistResponse.data)
             setWishlist(wishlistResponse.data)
         } catch (error) {
             console.log(error)
@@ -52,24 +51,31 @@ function Products() {
     const fetchProducts = async () =>{
         try {
             const productsResponse = await axios.get('http://localhost:5000/api/products/');
-            setAllProducts(productsResponse.data)
+            setProducts(productsResponse.data)
         } catch (error) {
             console.log("error fetching products")
         }
     }
 
-    const fetchFilteredProducts = (filters) => {
-        const url = new URL('http://localhost:3000/products');
-        if (filters.category) url.searchParams.append('category', filters.category);
-        if (filters.priceRange.min) url.searchParams.append('minPrice', filters.priceRange.min);
-        if (filters.priceRange.max) url.searchParams.append('maxPrice', filters.priceRange.max);
-
-        fetch(url)
-            .then(response => response.json())
-            .then(data => setProducts(data))
-            .catch(error => console.error('Error:', error));
+    const fetchFilteredProducts = async (filters) => {
+        try {
+            const params = new URLSearchParams({
+                category: filters.category,
+                minPrice: filters.minPrice,
+                maxPrice: filters.maxPrice
+            }).toString();
+            const response = await axios.get(`http://localhost:5000/api/products/?${params}`);
+            setProducts(response.data);
+            console.log(response.data)
+        } catch (error) {
+            console.error('Error fetching filtered products:', error);
+        }
     };
 
+
+    const handleClearFilters = () => {
+        fetchProducts();
+    };
    
     return(
         <>
@@ -106,7 +112,7 @@ function Products() {
             <Row className="filt-prod-cont">
                 <Col className="col-md-auto filterPanel">
                     {/*Panel for filters*/}
-                    <FilterComp onApplyFilters={fetchFilteredProducts} />
+                    <FilterComp onApplyFilters={fetchFilteredProducts} onClearFilters={handleClearFilters}  />
                 </Col>
 
                 <Col className="col productsPanel">
@@ -143,7 +149,7 @@ function Products() {
                             {view === 'allProducts' && (
                                 <Row className="justify-content-md-center">
                                     {/*Products go below*/}
-                                    {allProducts.map((product,index) => (
+                                    {products.map((product,index) => (
                                         <Col className="col-6 product-container" key={index}>
                                             <ProductCard 
                                                 productID ={product._id}
