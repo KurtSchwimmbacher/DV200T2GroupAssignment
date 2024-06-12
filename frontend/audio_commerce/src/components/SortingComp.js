@@ -5,22 +5,17 @@ import "../styles/SortingComp.css";
 import Dropdown from 'react-bootstrap/Dropdown'; 
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
-function SortingComp(){
-
-    return(
-        <>
-       
-        <DropdownButton id="dropdown-basic-button" className="sorting_dropdown" title="Sort Products By:">
-            <Dropdown.Item href="#/action-1" className="sortCat">Editors Pick</Dropdown.Item>
-            <Dropdown.Item href="#/action-2" className="sortCat">Popularity</Dropdown.Item>
-            <Dropdown.Item href="#/action-3" className="sortCat">Price: High - Low</Dropdown.Item>
-            <Dropdown.Item href="#/action-2" className="sortCat">Price: Low - High</Dropdown.Item>
-            <Dropdown.Item href="#/action-3" className="sortCat">A-Z</Dropdown.Item>
-            <Dropdown.Item href="#/action-3" className="sortCat">Z-A</Dropdown.Item>
+function SortingComp({ onSortSelected }) {
+    return (
+        <DropdownButton id="dropdown-basic-button" title="Sort Products By:" className="sorting_dropdown">
+            <Dropdown.Item onClick={() => onSortSelected('editor')}>Editors Pick</Dropdown.Item>
+            <Dropdown.Item onClick={() => onSortSelected('popularity')}>Popularity</Dropdown.Item>
+            <Dropdown.Item onClick={() => onSortSelected('priceHighLow')}>Price: High - Low</Dropdown.Item>
+            <Dropdown.Item onClick={() => onSortSelected('priceLowHigh')}>Price: Low - High</Dropdown.Item>
+            <Dropdown.Item onClick={() => onSortSelected('alphaAsc')}>A-Z</Dropdown.Item>
+            <Dropdown.Item onClick={() => onSortSelected('alphaDesc')}>Z-A</Dropdown.Item>
         </DropdownButton>
-                
-        </>
     );
 }
 
-export default SortingComp; 
+export default SortingComp;

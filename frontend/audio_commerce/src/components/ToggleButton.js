@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/ToggleButton.css';
 
-const ToggleButton = () => {
+const ToggleButton = (props) => {
     const [isListed, setIsListed] = useState(true);
 
     const toggleState = () => {
@@ -10,8 +10,8 @@ const ToggleButton = () => {
 
     return (
         <div className="toggle-button" onClick={toggleState}>
-            <div className={`toggle-option ${!isListed ? 'active' : ''}`}>Sold</div>
-            <div className={`toggle-option ${isListed ? 'active' : ''}`}>Listed</div>
+            <div className={`toggle-option ${!isListed ? 'active' : ''}`}>{props.first}</div>
+            <div className={`toggle-option ${isListed ? 'active' : ''}`}>{props.second}</div>
         </div>
     );
 };

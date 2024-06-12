@@ -76,3 +76,34 @@
     color: #FF6E1F;
     cursor: pointer;
 }
+
+
+.checkout-list{
+    list-style: none;
+}
+
+.order-item{
+    background-color: #FAFAFA;
+    padding: 5%;
+    margin: 1rem;
+    border-radius: 25px;
+    box-shadow: 7px 7px 5px 0px rgba(49, 54, 56, 0.07);
+}
+
+.order-con{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.shipped-status{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-img{
+    height: 25vh;
+    width: 25vh;
+}

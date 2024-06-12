@@ -61,7 +61,7 @@ function Community() {
         <Row>
           <Col className="col-6 form">
             <ListingForm />
-            <form
+            {/* <form
               onSubmit={(e) => {
                 e.preventDefault();
                 addComment(e.target.elements.comment.value);
@@ -70,7 +70,7 @@ function Community() {
             >
               <input className="input" type="text" name="comment"placeholder="Add a comment..." />
               <Button className="add" type="submit">Add</Button>
-            </form>
+            </form> */}
           </Col>
           <Col className="col-6">
             <div className="image"></div>
@@ -83,13 +83,13 @@ function Community() {
         </Row>
         <Row>
           <Col className="col-6">
-            <ToggleButton />
+            <ToggleButton first={"Sold"} second={"Listed"} />
           </Col>
           <Col className="col-6 edit justify-content-end">
             <EditListingsModal />
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col className="col-12">
             <h1>Comments</h1>
             <ul className="comment-box">
@@ -120,7 +120,7 @@ function Community() {
 </ul>
 
           </Col>
-        </Row>
+        </Row> */}
       </Container>
 
       <FooterComp />
