@@ -56,8 +56,8 @@ function FilterComp({ onApplyFilters, onClearFilters }) {
                     <input type="range" className="form-range" min="0" max="12000" value={priceRange.min} onChange={(e) => setPriceRange({ ...priceRange, min: e.target.value })}/>
                 </Accordion.Body>
             </Accordion.Item>
-            <Button onClick={handleApplyFilters}>Apply Filters</Button>
-            <Button variant="outline-secondary" onClick={handleClearFilters}>Clear Filters</Button>
+            <Button className="filter-btn-prim" onClick={handleApplyFilters}>Apply Filters</Button>
+            <Button className="filter-btn-sec" variant="outline-secondary" onClick={handleClearFilters}>Clear Filters</Button>
         </Accordion>
     );
 }

@@ -46,3 +46,18 @@ input[type="range"]::-moz-range-thumb:focus {
     border-bottom: 1px solid rgb(209, 207, 207) !important;
     border-top: 1px solid rgb(209, 207, 207) !important;
 }
+
+.filter-btn-prim{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    background-color: #FF6E1F;
+    color: white;
+    border: 1px solid #FF6E1F;
+}
+.filter-btn-sec{
+    width: 100%;
+    background-color: white;
+    color: #FF6E1F;
+    border: 1px solid #FF6E1F;
+}

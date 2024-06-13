@@ -9,8 +9,10 @@ import Login from "./pages/Login";
 import SignUp from './pages/SignUp';
 import EditProductPage from './pages/EditProductPage';
 import Checkouts from './pages/Checkouts';
+import Chatbot from './components/Chatbot'
 
 import { UserProvider } from './components/UserContext';
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
             <Route path='/edit/:id' element={<EditProductPage />} />
             <Route path='/checkouts' element={<Checkouts />} />
           </Routes>
+          <Chatbot/>
         </BrowserRouter>
       </UserProvider>
   );
