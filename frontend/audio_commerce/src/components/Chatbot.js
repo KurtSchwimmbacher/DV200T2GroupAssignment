@@ -9,7 +9,7 @@ const Chatbot = () => {
     const chatboxToggler = document.querySelector(".chatbot-toggler");
 
     let userMessage;
-    const API_KEY = "sk-proj-FpLXtULRV1gfTIuI9w2iT3BlbkFJIuN0EcsI3EG50f8V4j17";
+    const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
     const createChatLi = (message, className) => {
       const chatLi = document.createElement("li");
