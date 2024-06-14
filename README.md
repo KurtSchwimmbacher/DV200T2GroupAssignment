@@ -2,7 +2,7 @@
 
 ## Video Explanation
 - The link below is to google drive version of a recording where I showcase and explain some of the key features of this website
-
+https://drive.google.com/file/d/1qmlwQhS2ZC6EjtQgAep3ItXi4ZXZ1I_q/view?usp=sharing
 
 ## Overview
 
@@ -13,7 +13,7 @@ EQ is a full-stack web application built using the MERN stack (MongoDB, Express,
 - **CRUD Operations**: Users can create, read, update, and delete plant items.
 - **Image Uploads**: Users can upload images for each plant item.
 - **Filtering and Sorting**: Users refine their products page by sorting and filtering the products bases on factors such as price or category.
-- **Responsive Design**: The application is designed to be responsive and accessible across different devices and screen sizes.
+- **Filtering and Sorting**: Users refine their products page by sorting and filtering the products bases on factors such as price or category.
 
 ## Setup and Installation
 
@@ -108,7 +108,9 @@ git clone https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment.git
 7. **Updating Cart**:
 - On the Single Products page click the add to cart button to add products to cart
 
-
+8. **Like and Review**:
+- On the Single Products page click the heart under the product name to heart it
+- Use the drop down and input boxo to leave a review on the product
 
 
 ## Credits
