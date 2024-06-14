@@ -1,0 +1,110 @@
+.submit-review{
+    border-radius: 5px;
+    border: solid 1px #FF6E1F;
+    width: 195px;
+    height: 40px;
+    background-color: #FF6E1F;
+    color: white;
+    font-family: "Josefin Sans", sans-serif;
+    padding-top: 5px;
+}
+
+.submit-review:hover{
+    border-radius: 5px;
+    border: solid 1px black;
+    width: 195px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-family: "Josefin Sans", sans-serif;
+    padding-top: 5px;
+}
+
+.edit-review{
+    margin: 10px;
+    border-radius: 5px;
+    border: solid 1px #FF6E1F;
+
+    width: 85px;
+    background-color: #ff6d1f;
+    color: rgb(255, 255, 255);
+  
+    font-family: "Josefin Sans", sans-serif;
+    padding-top: 5px;
+}
+
+.edit-review:hover{
+    margin: 10px;
+    border-radius: 5px;
+    border: solid 1px black;
+
+    width: 85px;
+    background-color:black;
+    color: rgb(255, 255, 255);
+  
+    font-family: "Josefin Sans", sans-serif;
+    padding-top: 5px;
+}
+
+.delete-review{
+    margin: 10px;
+    border-radius: 5px;
+    border: solid 1px black;
+    
+    width: 85px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+  
+    font-family: "Josefin Sans", sans-serif;
+    padding-top: 5px;
+}
+
+.delete-review:hover{
+    margin: 10px;
+    border-radius: 5px;
+    border: solid 1px #FF6E1F;
+    
+    width: 85px;
+    background-color: #FF6E1F;
+    color: rgb(255, 255, 255);
+  
+    font-family: "Josefin Sans", sans-serif;
+    padding-top: 5px;
+}
+
+.edit-or-delete{
+    display: flex; 
+    justify-content: end;
+}
+.user-handle{
+    color: #ff6d1f;
+}
+
+/* attempting comment box with tailwhip  */
+
+.actual-review{
+    /* layout */
+	position: relative;
+	max-width: 30em;
+	
+	/* looks */
+	background-color: #fff;
+	padding: 1.125em 1.5em;
+	font-size: 1.25em;
+	border-radius: 1rem;
+  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+}
+
+.actual-review::after{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	bottom: 100%;
+	left: 1.5em;
+	border: .75rem solid transparent;
+	border-top: none;
+
+	border-bottom-color: #fff;
+	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+}

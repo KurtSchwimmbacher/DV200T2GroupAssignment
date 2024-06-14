@@ -9,7 +9,7 @@ const Chatbot = () => {
     const chatboxToggler = document.querySelector(".chatbot-toggler");
 
     let userMessage;
-    const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+    const API_KEY = "sk-proj-C9s56fK9mMCWjTPTpiqPT3BlbkFJ0t3xJ6F4n0fpczUPw6sV";
 
     const createChatLi = (message, className) => {
       const chatLi = document.createElement("li");
@@ -55,7 +55,7 @@ const Chatbot = () => {
             messageElement.textContent = botMessage;
           } else {
             console.error("Unexpected response format:", data);
-            messageElement.textContent = "An error occurred. Please try again.";
+            messageElement.textContent = "An error occurred. Please try again."; 
           }
         })
         .catch((error) => {
@@ -81,13 +81,13 @@ const Chatbot = () => {
     };
 
     sendChatBtn.addEventListener("click", handleChat);
-    chatboxToggler.addEventListener("click", () =>
-      document.body.classList.toggle("show-chatbot")
-    );
+    chatboxToggler.addEventListener("click", () => {
+      document.body.classList.toggle("show-chatbot");
+    });
   }, []);
 
   return (
-    <div className='chatbot-con'>
+    <div className="chatbot-con">
       <button className="chatbot-toggler">
         <span className="material-icons">mode_comment</span>
         <span className="material-icons">close</span>

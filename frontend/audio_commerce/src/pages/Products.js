@@ -23,14 +23,20 @@ function Products() {
         fetchWishlist();
     }, []);
 
-    const fetchProducts = async () => {
+    const fetchProducts = async (filters = {}) => {
         try {
-            const response = await axios.get('http://localhost:5000/api/products/');
+            const params = new URLSearchParams({
+                category: filters.category,
+                minPrice: filters.minPrice,
+                maxPrice: filters.maxPrice
+            }).toString();
+            const response = await axios.get(`http://localhost:5000/api/products/?${params}`);
             setProducts(response.data);
         } catch (error) {
             console.error("Error fetching products:", error);
         }
     };
+    
 
     const fetchWishlist = async () => {
         try {
@@ -40,6 +46,11 @@ function Products() {
             console.error("Error fetching wishlist:", error);
         }
     };
+
+    const fetchFilteredProducts = (filters) => {
+        fetchProducts(filters);
+    };
+    
 
     const handleSortSelected = (sortKey) => {
         let sortedProducts = [...products];
@@ -82,7 +93,7 @@ function Products() {
                 </Row>
                 <Row className="filt-prod-cont">
                     <Col className="col-md-auto filterPanel">
-                        <FilterComp onApplyFilters={fetchProducts} />
+                        <FilterComp  onApplyFilters={fetchFilteredProducts} onClearFilters={fetchProducts} />
                     </Col>
                     <Col className="col productsPanel">
                         <Row className="prod-panel-whole">

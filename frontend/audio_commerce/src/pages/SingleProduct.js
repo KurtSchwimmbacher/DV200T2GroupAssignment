@@ -86,7 +86,7 @@ function SingleProduct() {
                 <Col className="col-6">
                     <h1>{productObj.productName}</h1>
                     <div className="rating-like-con">
-                        <StarRating />
+                        {/* <StarRating /> */}
                         <LikeComponent productID={productObj._id} userID={user._id} />
                     </div>
                     <div className="bottom-text-con">
@@ -114,7 +114,7 @@ function SingleProduct() {
                 />
             </Row>
 
-            <Row className="schematic-title">
+            {/* <Row className="schematic-title">
                 <Col>
                     <h3>Product Schematics</h3>
                 </Col>
@@ -122,7 +122,7 @@ function SingleProduct() {
                     <p className="download-txt">Download Full PDF</p>
                     <ArrowRight className="pdf-arrow" />
                 </Col>
-            </Row>
+            </Row> */}
         </Container>
 
         <div className="schematic-con">

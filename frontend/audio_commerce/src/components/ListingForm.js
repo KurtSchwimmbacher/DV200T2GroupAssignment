@@ -38,6 +38,7 @@ const ListingForm = () => {
                     'Content-Type': 'multipart/form-data'
                 }
             });
+            console.log(response)
             alert('Product added successfully');
         } catch (error) {
             alert('Error adding product');

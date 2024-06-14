@@ -9,6 +9,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 import axios from "axios"; 
 
+import "../styles/ProdReview.css";
+
 // import UserContext from '../components/UserContext.js';
 
 function ProdReview({ productId, username }) {
@@ -107,7 +109,7 @@ function ProdReview({ productId, username }) {
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" className="submit-review" type="submit">
               {editingCommentId ? "Update Review" : "Submit Review"}
             </Button>
           </Form>
@@ -118,16 +120,18 @@ function ProdReview({ productId, username }) {
           <h2>Reviews</h2>
           <ListGroup>
             {comments.map((review) => (
-              <ListGroup.Item key={review._id}>
-                <strong>Rating: </strong> {review.rating}
+              <ListGroup.Item key={review._id} className="actual-review">
+                <strong>Rating: </strong> {review.rating} <span className="rating">/ 5 </span>
                 <br />
                 <strong>Comment: </strong> {review.comment}
                 <br />
                 <span className="user-handle">@{review.userName}</span>
                 {review.userName === username && (
                   <>
-                    <Button variant="secondary" onClick={() => handleEdit(review)}>Edit</Button>
-                    <Button variant="danger" onClick={() => handleDelete(review._id)}>Delete</Button>
+                  <div className="edit-or-delete">
+                    <Button className="edit-review" onClick={() => handleEdit(review)}>Edit</Button>
+                    <Button className="delete-review" onClick={() => handleDelete(review._id)}>Delete</Button>
+                  </div>
                   </>
                 )}
               </ListGroup.Item>
