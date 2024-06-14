@@ -107,7 +107,7 @@ git clone https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment.git
 
 7. **Updating Cart**:
 - On the Single Products page click the add to cart button to add products to cart
-- 
+
 
 
 
