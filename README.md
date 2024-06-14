@@ -18,7 +18,7 @@ EQ is a full-stack web application built using the MERN stack (MongoDB, Express,
 ## Setup and Installation
 
 1. **Clone the Repository**: 
-git clone https://github.com/KurtSchwimmbacher/DV200T2IndAssessment.git
+git clone https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment.git
 
 2. **Backend Setup**:
 - Navigate to the `backend` directory:
