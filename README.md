@@ -113,7 +113,7 @@ git clone https://github.com/KurtSchwimmbacher/DV200T2IndAssessment.git
 
 ## Credits
 
-This project was developed by Kurt Schwimmbacher as an assignment for Open Window DV200. 
+This project was developed by Ngozi Ojokwu, Mwape Kurete, Lebogang Hlongwwane, Kurt Schwimmbacher as an assignment for Open Window DV200. 
 
 ## License
 
