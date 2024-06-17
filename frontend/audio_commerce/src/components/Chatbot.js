@@ -8,8 +8,8 @@ const Chatbot = () => {
     const chatbox = document.querySelector(".chatbox");
     const chatboxToggler = document.querySelector(".chatbot-toggler");
 
-    let userMessage;
-    const API_KEY = "sk-proj-C9s56fK9mMCWjTPTpiqPT3BlbkFJ0t3xJ6F4n0fpczUPw6sV";
+    let userMessage; 
+    const API_KEY = "sk-proj-ASRQ6dqBHQTbnDeW2pyhT3BlbkFJL2hlnGEDVkhCrosvnObc";
 
     const createChatLi = (message, className) => {
       const chatLi = document.createElement("li");
@@ -17,7 +17,7 @@ const Chatbot = () => {
       let chatContent =
         className === "outgoing"
           ? `<p>${message}</p>`
-          : `<span class="material-icons">smart_toy</span><p>${message}</p>`;
+          : `<span class="material-icons">smart_toy</span><p>${message}</p>`;  
       chatLi.innerHTML = chatContent;
       return chatLi;
     };
