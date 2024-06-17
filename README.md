@@ -4,6 +4,9 @@
 - The link below is to google drive version of a recording where I showcase and explain some of the key features of this website
 https://drive.google.com/file/d/1qmlwQhS2ZC6EjtQgAep3ItXi4ZXZ1I_q/view?usp=sharing
 
+- The link below is a video demonstration of our chat bot feature
+https://drive.google.com/file/d/12Q5gW5YsGZ-mnOOL3TJZ5DBwP0nqLaBY/view?usp=sharing 
+
 ## Overview
 
 EQ is a full-stack web application built using the MERN stack (MongoDB, Express, React, Node.js) that allows users to explore and manage a collection of audio equipment. The application provides CRUD (Create, Read, Update, Delete) functionality for headphones and other items, along with additional features such as image uploads, filtering, a chat bot and a cart with checkout functionality.
