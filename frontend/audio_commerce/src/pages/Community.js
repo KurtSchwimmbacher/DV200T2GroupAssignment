@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import EditListingsModal from "../components/EditListingsModal";
@@ -13,7 +13,7 @@ import ToggleButton from "../components/ToggleButton";
 import NavigationBar from "../components/NavigationBar";
 import HeaderComp from "../components/HeaderComp";
 import MarqComp from "../components/MarqComp";
-import { useContext } from "react";
+
 import UserContext from "../components/UserContext";
 import FooterComp from '../components/FooterComp';
 
@@ -21,6 +21,7 @@ function Community() {
   const { user } = useContext(UserContext);
   const [comments, setComments] = useState([]);
   const [allProducts,setAllProducts] = useState([]);
+  const [listings, setListings] = useState([]);
 
   const addComment = (text) => {
     const newComment = {
@@ -45,6 +46,24 @@ function Community() {
   };
 
 
+
+  useEffect(()=>{
+
+    console.log('fetching listings for user: ', user.name);
+    fetchUserListings();
+
+  },[user]);
+
+
+  const fetchUserListings = async (username) => {
+    try {
+      const response = await axios.get(`http://localhost:5000/api/products/user/${username}`);
+      console.log('Fetched listings:', response.data); // Debugging line
+      setListings(response.data);
+    } catch (error) {
+      console.error('Error fetching user listings:', error);
+    }
+  };
 
   return (
     <>
@@ -85,6 +104,17 @@ function Community() {
           <Col className="col-6">
             <ToggleButton first={"Sold"} second={"Listed"} />
           </Col>
+          {listings.map((product, index) => (
+            <Col className="col-6 product-container" key={index}>
+                <ProductCard
+                    productID={product._id}
+                    name={product.productName}
+                    category={product.category}
+                    image={`http://localhost:5000/${product.imagesURL}`}
+                    price={product.price}
+                />
+            </Col>
+          ))}
           <Col className="col-6 edit justify-content-end">
             <EditListingsModal />
           </Col>
