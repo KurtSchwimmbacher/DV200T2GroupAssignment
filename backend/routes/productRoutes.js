@@ -26,13 +26,18 @@ const upload = multer({ storage: storage });
 // Add a new product route
 router.post('/addproduct', upload.single('imagesURL'), async (req, res) => {
     console.log(req.file); // Log file information
+    
 
     try {
-        const { productName, category, price, username } = req.body;
+        const { productName, category, price, username, description } = req.body;
         const imagesURL = req.file.filename; // Get the uploaded file's filename
 
-        const product = new Product({ productName, category, price, imagesURL, username });
+        const product = new Product({ productName, description, category, price, imagesURL, username });
 
+        if (!productName || !category || !description || !price || !username) {
+            return res.status(400).json({ error: 'All fields are required' });
+        }
+        
         const savedProduct = await product.save(); // Save the new product to the database
 
         res.status(201).json(savedProduct);

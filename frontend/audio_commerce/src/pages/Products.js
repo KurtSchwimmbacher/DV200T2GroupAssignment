@@ -25,17 +25,20 @@ function Products() {
 
     const fetchProducts = async (filters = {}) => {
         try {
-            const params = new URLSearchParams({
-                category: filters.category,
-                minPrice: filters.minPrice,
-                maxPrice: filters.maxPrice
-            }).toString();
-            const response = await axios.get(`http://localhost:5000/api/products/?${params}`);
+            // Create params object with only defined values
+            const params = {};
+            if (filters.category) params.category = filters.category;
+            if (filters.minPrice !== undefined) params.minPrice = filters.minPrice;
+            if (filters.maxPrice !== undefined) params.maxPrice = filters.maxPrice;
+    
+            // Make the GET request with valid params only
+            const response = await axios.get('http://localhost:5000/api/products/', { params });
             setProducts(response.data);
         } catch (error) {
             console.error("Error fetching products:", error);
         }
     };
+    
     
 
     const fetchWishlist = async () => {

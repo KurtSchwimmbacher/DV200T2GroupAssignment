@@ -31,17 +31,19 @@ const ListingForm = () => {
         formData.append('price', price);
         formData.append('imagesURL', productImg);
         formData.append('username', user.name); // Add username to form data
-
+        
         try {
+            console.log(formData);
+
             const response = await axios.post('http://localhost:5000/api/products/addproduct', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             });
-            console.log(response)
+            console.log(response.data)
             alert('Product added successfully');
         } catch (error) {
-            alert('Error adding product');
+            alert('Error adding product', error.data);
         }
     };
 
