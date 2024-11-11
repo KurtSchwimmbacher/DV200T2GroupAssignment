@@ -127,7 +127,7 @@ Once both the backend and frontend servers are running, open your browser and na
 ### Deliveries Page
 ![Deliveries Page](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/UI_Designs/UI_Design_Deliveries_1.png)
 
-## Development Process
+## Mockups
 ![Home Mockup](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/Mockups/Mockup_Home.png)
 ![Product Mockup](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/Mockups/Mockup_Products.png)
 ![Community Mockup](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/Mockups/Mockup_Community.png)
@@ -146,7 +146,9 @@ Once both the backend and frontend servers are running, open your browser and na
 * Increase Admin functionality - allow admins to moderate products being posted and reviews
 * Expand filtering to include more fields, such as brand 
 
-## Mockups
+## Technical Documents
+### ERD
+![ERD](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/ERD.png)
 
 
 
