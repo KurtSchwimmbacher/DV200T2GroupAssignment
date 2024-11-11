@@ -1,5 +1,8 @@
 ![ClearView Header Image](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/EQ_Logo.png)
 
+- - - -
+
+
 # About EQ
 
 EQ is a full-stack web application built using the MERN stack (MongoDB, Express, React, Node.js) that allows users to explore and manage a collection of audio equipment. The application provides CRUD (Create, Read, Update, Delete) functionality for headphones and audio other items, along with additional features such as image uploads, filtering, a chat bot and a cart with checkout functionality.
