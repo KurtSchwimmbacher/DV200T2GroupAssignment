@@ -1,5 +1,8 @@
 # EQ
 ## Kurt Schwimmbacher
+## Ngozi Ojukwu
+## Lebogang Hlongwane
+## Mwape Kurete
 
 ![ClearView Header Image](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/EQ_Logo.png)
 
@@ -200,7 +203,7 @@ https://drive.google.com/file/d/12Q5gW5YsGZ-mnOOL3TJZ5DBwP0nqLaBY/view?usp=shari
 This project was developed by Ngozi Ojokwu, Mwape Kurete, Lebogang Hlongwwane, Kurt Schwimmbacher as an assignment for Open Window DV200.
 
 ### License
-[MIT](LICENSE) © Kurt Schwimmbacher, Ngozi Ojokwu, Mwape Kurete, Lebogang Hlongwane.
+[MIT](LICENSE) © Kurt Schwimmbacher, Ngozi Ojukwu, Mwape Kurete, Lebogang Hlongwane.
 
 ### Author
 Kurt Schwimmbacher - 231002@virtualwindow.co.za
