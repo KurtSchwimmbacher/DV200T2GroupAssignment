@@ -1,6 +1,38 @@
+# EQ
+## Kurt Schwimmbacher
+
 ![ClearView Header Image](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/EQ_Logo.png)
 
 - - - -
+## Table of Contents
+
+1. [About EQ](#about-eq)
+2. [Built With](#built-with)
+   - [Frontend](#frontend)
+   - [Backend](#backend)
+3. [How To Install](#how-to-install)
+4. [Features](#features)
+5. [UI Design](#ui-design)
+   - [Home Page](#home-page)
+   - [Products Page](#products-page)
+   - [Single Product Page](#single-product-page)
+   - [Community Page](#community-page)
+   - [Cart Page](#cart-page)
+   - [Deliveries Page](#deliveries-page)
+6. [Mockups](#mockups)
+   - [Home Mockup](#home-mockup)
+   - [Product Mockup](#product-mockup)
+   - [Community Mockup](#community-mockup)
+7. [Highlights](#highlights)
+8. [Challenges](#challenges)
+9. [Future Implementations](#future-implementations)
+10. [Technical Documents](#technical-documents)
+    - [ERD](#erd)
+11. [Demonstration](#demonstration)
+12. [Credits](#credits)
+13. [License](#license)
+14. [Author](#author)
+15. [Contribution](#contribution)
 
 
 # About EQ
@@ -128,8 +160,11 @@ Once both the backend and frontend servers are running, open your browser and na
 ![Deliveries Page](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/UI_Designs/UI_Design_Deliveries_1.png)
 
 ## Mockups
+### Home Mockup
 ![Home Mockup](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/Mockups/Mockup_Home.png)
+### Product
 ![Product Mockup](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/Mockups/Mockup_Products.png)
+### Community Mockup
 ![Community Mockup](https://github.com/KurtSchwimmbacher/DV200T2GroupAssignment/blob/main/frontend/audio_commerce/src/assets/readme_assets/Mockups/Mockup_Community.png)
 
 ### Highlights
